@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 17, 2016 at 05:45 PM
+-- Generation Time: Jul 17, 2016 at 06:26 PM
 -- Server version: 5.7.12-0ubuntu1.1
 -- PHP Version: 7.0.4-7ubuntu2.1
 
@@ -23,10 +23,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `materias`
+-- Table structure for table `disciplinas`
 --
 
-CREATE TABLE `materias` (
+CREATE TABLE `disciplinas` (
   `nome` varchar(10) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -39,18 +39,18 @@ CREATE TABLE `materias` (
 CREATE TABLE `professores` (
   `cpf` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
   `nome` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `idade` varchar(3) COLLATE utf8_unicode_ci NOT NULL
+  `idade` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `professores_materias`
+-- Table structure for table `professores_disciplinas`
 --
 
-CREATE TABLE `professores_materias` (
+CREATE TABLE `professores_disciplinas` (
   `professor_cpf` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
-  `materia_nome` varchar(10) COLLATE utf8_unicode_ci NOT NULL
+  `disciplina_nome` varchar(10) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -72,8 +72,8 @@ CREATE TABLE `professores_turmas` (
 
 CREATE TABLE `provas` (
   `id` int(11) NOT NULL,
-  `materia_nome` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `professor_cpf` varchar(11) COLLATE utf8_unicode_ci NOT NULL
+  `professor_cpf` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
+  `disciplina_nome` varchar(10) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -114,9 +114,9 @@ CREATE TABLE `turmas` (
 --
 
 --
--- Indexes for table `materias`
+-- Indexes for table `disciplinas`
 --
-ALTER TABLE `materias`
+ALTER TABLE `disciplinas`
   ADD PRIMARY KEY (`nome`);
 
 --
@@ -126,22 +126,33 @@ ALTER TABLE `professores`
   ADD PRIMARY KEY (`cpf`);
 
 --
--- Indexes for table `professores_materias`
+-- Indexes for table `professores_disciplinas`
 --
-ALTER TABLE `professores_materias`
-  ADD PRIMARY KEY (`professor_cpf`,`materia_nome`);
+ALTER TABLE `professores_disciplinas`
+  ADD PRIMARY KEY (`professor_cpf`,`disciplina_nome`),
+  ADD KEY `disciplina_nome` (`disciplina_nome`);
 
 --
 -- Indexes for table `professores_turmas`
 --
 ALTER TABLE `professores_turmas`
-  ADD PRIMARY KEY (`professor_cpf`,`turma_nome`);
+  ADD PRIMARY KEY (`professor_cpf`,`turma_nome`),
+  ADD KEY `turma_nome` (`turma_nome`);
 
 --
 -- Indexes for table `provas`
 --
 ALTER TABLE `provas`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`,`professor_cpf`),
+  ADD KEY `disciplina_nome` (`disciplina_nome`),
+  ADD KEY `professor_cpf` (`professor_cpf`);
+
+--
+-- Indexes for table `provas_questoes`
+--
+ALTER TABLE `provas_questoes`
+  ADD PRIMARY KEY (`prova_id`,`questao_id`),
+  ADD KEY `questao_id` (`questao_id`);
 
 --
 -- Indexes for table `questoes`
@@ -154,6 +165,38 @@ ALTER TABLE `questoes`
 --
 ALTER TABLE `turmas`
   ADD PRIMARY KEY (`nome`);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `professores_disciplinas`
+--
+ALTER TABLE `professores_disciplinas`
+  ADD CONSTRAINT `professores_disciplinas_ibfk_1` FOREIGN KEY (`professor_cpf`) REFERENCES `professores` (`cpf`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `professores_disciplinas_ibfk_2` FOREIGN KEY (`disciplina_nome`) REFERENCES `disciplinas` (`nome`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `professores_turmas`
+--
+ALTER TABLE `professores_turmas`
+  ADD CONSTRAINT `professores_turmas_ibfk_1` FOREIGN KEY (`professor_cpf`) REFERENCES `professores` (`cpf`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `professores_turmas_ibfk_2` FOREIGN KEY (`turma_nome`) REFERENCES `turmas` (`nome`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `provas`
+--
+ALTER TABLE `provas`
+  ADD CONSTRAINT `provas_ibfk_1` FOREIGN KEY (`professor_cpf`) REFERENCES `professores` (`cpf`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `provas_ibfk_2` FOREIGN KEY (`disciplina_nome`) REFERENCES `disciplinas` (`nome`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `provas_questoes`
+--
+ALTER TABLE `provas_questoes`
+  ADD CONSTRAINT `provas_questoes_ibfk_1` FOREIGN KEY (`prova_id`) REFERENCES `provas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `provas_questoes_ibfk_2` FOREIGN KEY (`questao_id`) REFERENCES `questoes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
