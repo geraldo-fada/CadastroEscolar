@@ -1,0 +1,10 @@
+As pastas "assets" e "public" não estão inclusas.
+
+Os arquivos deverão ser nomeados da seguinte maneira: ~nome do arquivo~ + ~nome da pasta com letra maiscula na frente e no singular~ . ~extensão~
+Ex:
+    └── templates
+        ├── footerTemplate.php
+        └── headerTemplate.php
+
+
+Qualquer exceção será adicionada mais tarde.
