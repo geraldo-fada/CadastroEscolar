@@ -19,7 +19,7 @@ nav i {
 
 nav ul {
   list-style: none;
-  margin: 10px;
+  margin: 0;
   padding: 0;
 }
 
@@ -30,7 +30,7 @@ nav a {
 }
 
 nav li {
-  padding: 10px;
+  padding: 20px;
   cursor: pointer;
 }
 
@@ -38,9 +38,9 @@ nav li:hover {
   background-color: #546e7a;
 }
 
-nav .nav-dropdown {
+nav ul .nav-dropdown {
   display: none;
-  margin-bottom: 0;
+  margin: 20px 0 0 0;
 }
 
 nav .nav-dropdown li:hover {

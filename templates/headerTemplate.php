@@ -15,19 +15,19 @@
   <body>
     <nav>
       <ul>
-        <li><a href=""><i class="fa fa-home" aria-hidden="true"></i>Inicio</a></li>
+        <li><a href="index.php"><i class="fa fa-home" aria-hidden="true"></i>Inicio</a></li>
+
+        <li class="nav-dropdown-btn"><i class="fa fa-user" aria-hidden="true"></i>Professores
+          <ul class="nav-dropdown">
+            <li><a href="cadastro-professor.php"><i class="fa fa-pencil" aria-hidden="true"></i>Cadastro</a></li>
+            <li><a href=""><i class="fa fa-search" aria-hidden="true"></i>Consulta</a></li>
+          </ul>
+        </li>
 
         <li class="nav-dropdown-btn"><i class="fa fa-file" aria-hidden="true"></i>Provas
           <ul class="nav-dropdown">
             <li><a href=""><i class="fa fa-pencil" aria-hidden="true"></i>Cadastro</a></li>
             <li><a href=""><i class="fa fa-download" aria-hidden="true"></i>Gerar prova</a></li>
-          </ul>
-        </li>
-
-        <li class="nav-dropdown-btn"><i class="fa fa-user" aria-hidden="true"></i>Professores
-          <ul class="nav-dropdown">
-            <li><a href=""><i class="fa fa-pencil" aria-hidden="true"></i>Cadastro</a></li>
-            <li><a href=""><i class="fa fa-search" aria-hidden="true"></i>Consulta</a></li>
           </ul>
         </li>
 

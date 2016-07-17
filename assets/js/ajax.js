@@ -16,7 +16,7 @@ function CriaRequest() {
       }
    }
    if (!request)
-      alert("Seu Navegador não suporta Ajax!");
+      alert("Seu navegador não suporta Ajax, por favor faça atualização do navegador.");
    else
       return request;
 };
