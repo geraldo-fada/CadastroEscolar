@@ -46,3 +46,10 @@ nav .nav-dropdown {
 nav .nav-dropdown li:hover {
   background-color: #37474f;
 }
+
+/* MAIN SECTION */
+
+main {
+  margin-left: 200px;
+  padding: 0 50px;
+}

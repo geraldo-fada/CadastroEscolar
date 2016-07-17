@@ -1,3 +1,5 @@
-<?php require_once "/templates/headerTemplate.php" ?>
+<?php require_once "../templates/headerTemplate.php" ?>
 
-<?php require_once "/templates/footerTemplate.php" ?>
+      <h1>Index!</h1>
+
+<?php require_once "../templates/footerTemplate.php" ?>
