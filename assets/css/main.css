@@ -1,0 +1,48 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* NAV BAR */
+nav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+
+  width: 200px;
+  background-color: #37474f;
+  color: #dedede;
+}
+
+nav i {
+  margin-right: 10px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 10px;
+  padding: 0;
+}
+
+nav a {
+  display: block;
+  text-decoration: none;
+  color: #dedede;
+}
+
+nav li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+nav li:hover {
+  background-color: #546e7a;
+}
+
+nav .nav-dropdown {
+  display: none;
+  margin-bottom: 0;
+}
+
+nav .nav-dropdown li:hover {
+  background-color: #37474f;
+}
