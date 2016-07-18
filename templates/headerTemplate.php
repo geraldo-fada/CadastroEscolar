@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="../assets/css/font-awesome-4.6.3/css/font-awesome.min.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,300,400,500" media="screen" title="no title" charset="utf-8">
 
     <link rel="stylesheet" href="../assets/css/normalize.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="../assets/css/main.css" media="screen" title="no title" charset="utf-8">
@@ -15,19 +16,26 @@
   <body>
     <nav>
       <ul>
+        <li id="nav-logo">Portal dos Professores</li>
+
+        <!-- INICIO -->
         <li><a href="index.php"><i class="fa fa-home" aria-hidden="true"></i>Inicio</a></li>
 
-        <li class="nav-dropdown-btn"><i class="fa fa-user" aria-hidden="true"></i>Professores
+        <!-- PROFESSORES -->
+        <li class="nav-dropdown-btn">
+          <a href="#"><i class="fa fa-user" aria-hidden="true"></i>Professores</a>
           <ul class="nav-dropdown">
-            <li><a href="cadastro-professor.php"><i class="fa fa-pencil" aria-hidden="true"></i>Cadastro</a></li>
-            <li><a href=""><i class="fa fa-search" aria-hidden="true"></i>Consulta</a></li>
+            <li><a href="cadastroProfessor.php"><i class="fa fa-pencil" aria-hidden="true"></i>Cadastrar</a></li>
+            <li><a href="consultaProfessor.php"><i class="fa fa-search" aria-hidden="true"></i>Consultar</a></li>
           </ul>
         </li>
 
-        <li class="nav-dropdown-btn"><i class="fa fa-file" aria-hidden="true"></i>Provas
+        <!-- PROVAS -->
+        <li class="nav-dropdown-btn">
+          <a href="#"><i class="fa fa-file-text" aria-hidden="true"></i>Provas</a>
           <ul class="nav-dropdown">
-            <li><a href=""><i class="fa fa-pencil" aria-hidden="true"></i>Cadastro</a></li>
-            <li><a href=""><i class="fa fa-download" aria-hidden="true"></i>Gerar prova</a></li>
+            <li><a href="cadastroProva.php"><i class="fa fa-pencil" aria-hidden="true"></i>Cadastrar</a></li>
+            <li><a href="geraProva.php"><i class="fa fa-download" aria-hidden="true"></i>Gerar prova</a></li>
           </ul>
         </li>
 
