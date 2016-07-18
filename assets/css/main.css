@@ -56,11 +56,20 @@ nav .nav-dropdown a:hover {
   background-color: #263238;
 }
 
-#nav-logo {
+#nav-logo i {
+  position: absolute;
+  top: 0;
+  left: 15px;
+  margin: 0;
+  font-size: 40px;
+  color: #d32f2f;
+}
+
+#nav-logo h1{
   font-weight: 300;
-  letter-spacing: 2px;
   font-size: 25px;
-  padding: 20px;
+  margin: 0;
+  margin: 10px 0 20px 65px;
 }
 
 /* MAIN SECTION */

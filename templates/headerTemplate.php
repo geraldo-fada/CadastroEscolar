@@ -8,7 +8,6 @@
 
     <link rel="stylesheet" href="../assets/css/font-awesome-4.6.3/css/font-awesome.min.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700" media="screen" title="no title" charset="utf-8">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,300,400,500" media="screen" title="no title" charset="utf-8">
 
     <link rel="stylesheet" href="../assets/css/normalize.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="../assets/css/main.css" media="screen" title="no title" charset="utf-8">
@@ -16,7 +15,7 @@
   <body>
     <nav>
       <ul>
-        <li id="nav-logo">Portal dos Professores</li>
+        <li id="nav-logo"><i class="fa fa-bookmark" aria-hidden="true"></i><h1>Portal dos Professores</h1></li>
 
         <!-- INICIO -->
         <li><a href="index.php"><i class="fa fa-home" aria-hidden="true"></i>Inicio</a></li>
