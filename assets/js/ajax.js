@@ -42,18 +42,20 @@ function getControllerPessoa(controller, id_div) {
   xmlreq.send(null);
 };
 
-function cadPessoa() {
+function cadProfessor() {
   var nome = $("input[name='nome']").val();
   var idade = $("input[name='idade']").val();
-  var telcel = $("input[name='telcel']").val();
-  var telres = $("input[name='telres']").val();
+  var cpf = $("input[name='cpf']").val();
+  var turma = $("select[name='turma']").val();
+  var disciplina = $("select[name='disciplina']").val();
+
+  console.log(nome);
 
   var wrapper = $("#resultado_query");
   var xmlreq = CriaRequest();
 
-  xmlreq.open("POST", "../controllers/controllerCadastro.php", true);
+  xmlreq.open("POST", "../controllers/cadastroProfessorController.php", true);
 
-  //FIXME: erro aqui, não descobri ainda o que é....
   xmlreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
   xmlreq.onreadystatechange = function() {
@@ -67,6 +69,6 @@ function cadPessoa() {
     }
   };
 
-  xmlreq.send("nome=" + nome + "&idade=" + idade + "&telcel=" + telcel + "&telres=" + telres);
+  xmlreq.send("nome=" + nome + "&idade=" + idade + "&cpf=" + cpf + "&turma=" + turma + "&disciplina=" + disciplina);
 
 };
