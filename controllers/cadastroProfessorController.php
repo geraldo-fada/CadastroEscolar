@@ -12,7 +12,10 @@
     $con->query("INSERT INTO professores_disciplinas VALUES ('" . $cpf . "', '" . $disciplina . "')");
     $con->query("INSERT INTO professores_turmas VALUES ('" . $cpf . "', '" . $turma . "')");
 
-    echo "<p>Professor cadastrado com sucesso!</p>";
+    echo "<div class='msg-sucesso'>
+            Professor cadastrado com sucesso!
+            <i class='fa fa-times' aria-hidden='true' onclick=\"this.parentElement.style.display='none';\"></i>
+          </div>";
   }
   else {
     echo "<p>Por favor, complete todos os campos!</p>";

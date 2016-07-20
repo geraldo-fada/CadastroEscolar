@@ -3,7 +3,7 @@
 
       <h1>Cadastro de professores</h1>
 
-      <form method="post" onsubmit="cadProfessor(); return false;" action="">
+      <form id="cadProfessor" method="post" onsubmit="cadProfessor(); return false;" action="">
 
         <!-- NOME -->
         <div class="form-input">

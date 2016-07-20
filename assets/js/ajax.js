@@ -43,11 +43,15 @@ function getControllerPessoa(controller, id_div) {
 };
 
 function cadProfessor() {
+  var form = document.getElementById('cadProfessor');
+
   var nome = $("input[name='nome']").val();
   var idade = $("input[name='idade']").val();
   var cpf = $("input[name='cpf']").val();
   var turma = $("select[name='turma']").val();
   var disciplina = $("select[name='disciplina']").val();
+
+  form.reset();
 
   console.log(disciplina);
 
@@ -70,5 +74,4 @@ function cadProfessor() {
   };
 
   xmlreq.send("nome=" + nome + "&idade=" + idade + "&cpf=" + cpf + "&turma=" + turma + "&disciplina=" + disciplina);
-
 };
