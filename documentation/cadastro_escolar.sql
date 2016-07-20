@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 17, 2016 at 06:26 PM
+-- Generation Time: Jul 19, 2016 at 11:27 PM
 -- Server version: 5.7.12-0ubuntu1.1
--- PHP Version: 7.0.4-7ubuntu2.1
+-- PHP Version: 7.0.8-0ubuntu0.16.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -29,6 +29,14 @@ SET time_zone = "+00:00";
 CREATE TABLE `disciplinas` (
   `nome` varchar(10) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `disciplinas`
+--
+
+INSERT INTO `disciplinas` (`nome`) VALUES
+('Matemática'),
+('Português');
 
 -- --------------------------------------------------------
 
@@ -108,6 +116,15 @@ CREATE TABLE `questoes` (
 CREATE TABLE `turmas` (
   `nome` varchar(6) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `turmas`
+--
+
+INSERT INTO `turmas` (`nome`) VALUES
+('IN313'),
+('MA420'),
+('Olá');
 
 --
 -- Indexes for dumped tables
