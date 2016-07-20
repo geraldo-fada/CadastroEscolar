@@ -1,9 +1,12 @@
 <!-- Parte fixa do header que é chamada em todas as páginas -->
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">
   <head>
-    <meta charset="UTF-8" lang="pt_BR">
+    <?php header('Content-type: text/html; charset=UTF-8'); ?>
+    <meta http-equiv="Content-language" content="pt">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Cadastro Escolar</title>
 
     <link rel="stylesheet" href="../assets/css/font-awesome-4.6.3/css/font-awesome.min.css" media="screen" title="no title" charset="utf-8">
@@ -35,6 +38,15 @@
           <ul class="nav-dropdown">
             <li><a href="cadastroProva.php"><i class="fa fa-pencil" aria-hidden="true"></i>Cadastrar</a></li>
             <li><a href="geraProva.php"><i class="fa fa-upload" aria-hidden="true"></i>Gerar prova</a></li>
+          </ul>
+        </li>
+
+        <!-- ADMINISTRAÇÃO -->
+        <li class="nav-dropdown-btn">
+          <a href="#"><i class="fa fa-cog" aria-hidden="true"></i>Admnistração</a>
+          <ul class="nav-dropdown">
+            <li><a href="cadastroTurma.php"><i class="fa fa-pencil" aria-hidden="true"></i>Cadastrar turma</a></li>
+            <li><a href="consultaTurma.php"><i class="fa fa-search" aria-hidden="true"></i>Consultar turma</a></li>
           </ul>
         </li>
 

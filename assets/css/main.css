@@ -80,6 +80,7 @@ input[type=text], input[type=submit], select {
   padding: 15px;
   margin: 10px 0;
   transition: all ease-in-out 0.2s;
+  outline:none;
   -moz-appearance: none;
   -webkit-appearance:none;
 }
