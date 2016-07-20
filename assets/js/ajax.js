@@ -49,7 +49,7 @@ function cadProfessor() {
   var turma = $("select[name='turma']").val();
   var disciplina = $("select[name='disciplina']").val();
 
-  console.log(nome);
+  console.log(disciplina);
 
   var wrapper = $("#resultado_query");
   var xmlreq = CriaRequest();
