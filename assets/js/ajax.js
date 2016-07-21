@@ -53,8 +53,6 @@ function cadProfessor() {
 
   form.reset();
 
-  console.log(disciplina);
-
   var wrapper = $("#resultado_query");
   var xmlreq = CriaRequest();
 
@@ -75,3 +73,33 @@ function cadProfessor() {
 
   xmlreq.send("nome=" + nome + "&idade=" + idade + "&cpf=" + cpf + "&turma=" + turma + "&disciplina=" + disciplina);
 };
+
+function cadQuestao() {
+  var form = document.getElementById('cadQuestao');
+
+  var nome = $("input[name='nome']").val();
+  var corpo = $("textarea[name='corpo']").val();
+
+  form.reset();
+
+  var wrapper = $("#resultado_query");
+  var xmlreq = CriaRequest();
+
+  xmlreq.open("POST", "../controllers/cadastroQuestaoController.php", true);
+
+  xmlreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+  xmlreq.onreadystatechange = function() {
+    if (xmlreq.readyState == 4) {
+      if (xmlreq.status == 200) {
+        wrapper.html(xmlreq.responseText);
+      }
+      else {
+        wrapper.html("Erro: " + xmlreq.statusText);
+      }
+    }
+  };
+
+  xmlreq.send("nome=" + nome + "&corpo=" + corpo);
+
+}

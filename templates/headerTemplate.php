@@ -36,7 +36,8 @@
         <li class="nav-dropdown-btn">
           <a href="#"><i class="fa fa-file-text" aria-hidden="true"></i>Provas</a>
           <ul class="nav-dropdown">
-            <li><a href="cadastroProva.php"><i class="fa fa-pencil" aria-hidden="true"></i>Cadastrar</a></li>
+            <li><a href="cadastroQuestao.php"><i class="fa fa-pencil" aria-hidden="true"></i>Cadastrar questão</a></li>
+            <li><a href="cadastroProva.php"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Cadastrar prova</a></li>
             <li><a href="geraProva.php"><i class="fa fa-upload" aria-hidden="true"></i>Gerar prova</a></li>
           </ul>
         </li>

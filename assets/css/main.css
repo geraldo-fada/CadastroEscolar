@@ -73,7 +73,7 @@ nav .nav-dropdown a:hover {
 }
 
 /* FORM SECTION */
-input[type=text], input[type=submit], select {
+input[type=text], input[type=submit], select, textarea {
   background-color: #fff;
   border: 1px solid #cfd8dc;
   border-radius: 5px;
@@ -85,7 +85,7 @@ input[type=text], input[type=submit], select {
   -webkit-appearance:none;
 }
 
-input[type=text]:focus, input[type=submit]:focus, select:focus, input[type=submit]:hover {
+input[type=text]:focus, input[type=submit]:focus, select:focus, input[type=submit]:hover, textarea:focus {
   border: 1px solid #263238;
   box-shadow: 0px 0px 5px 0px rgba(38, 50, 56, 0.2);
 }
@@ -107,6 +107,10 @@ form div.form-input {
 form div.form-input i {
   width: 20px;
   padding: 10px;
+}
+
+form div.form-input textarea {
+  margin-left: 45px;
 }
 
 /* MAIN SECTION */
