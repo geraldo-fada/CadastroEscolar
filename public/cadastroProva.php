@@ -8,7 +8,7 @@
         <!-- CPF -->
         <div class="form-input">
           <i class="fa fa-credit-card-alt" aria-hidden="true"></i>
-          <input type="text" name="cpf" maxlength="11" required="true" placeholder="CPF do dono da prova">
+          <input type="text" name="cpf" maxlength="11" required="true" placeholder="CPF do dono da prova" onblur="getCpfProva()">
         </div>
 
         <!-- DISCIPLINA -->

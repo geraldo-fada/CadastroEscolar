@@ -8,14 +8,20 @@
     $turma = utf8_decode($_POST["turma"]);
     $disciplina = utf8_decode($_POST["disciplina"]);
 
-    $con->query("INSERT INTO professores VALUES ('" . $cpf . "', '" . $nome . "', " . $idade . ")");
-    $con->query("INSERT INTO professores_disciplinas VALUES ('" . $cpf . "', '" . $disciplina . "')");
-    $con->query("INSERT INTO professores_turmas VALUES ('" . $cpf . "', '" . $turma . "')");
+    try {
+      $con->query("INSERT INTO professores VALUES ('" . $cpf . "', '" . $nome . "', " . $idade . ")");
+      $con->query("INSERT INTO professores_disciplinas VALUES ('" . $cpf . "', '" . $disciplina . "')");
+      $con->query("INSERT INTO professores_turmas VALUES ('" . $cpf . "', '" . $turma . "')");
 
-    echo "<div class='msg-sucesso'>
-            Professor cadastrado com sucesso!
-            <i class='fa fa-times' aria-hidden='true' onclick=\"this.parentElement.style.display='none';\"></i>
-          </div>";
+      echo "<div class='msg-sucesso'>
+              Professor cadastrado com sucesso!
+              <i class='fa fa-times' aria-hidden='true' onclick=\"this.parentElement.style.display='none';\"></i>
+            </div>";
+    }
+    catch(PDOException $e) {
+      echo "Error: " . $e;
+    }
+
   }
   else {
     echo "<p>Por favor, complete todos os campos!</p>";

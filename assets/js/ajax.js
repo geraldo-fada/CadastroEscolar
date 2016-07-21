@@ -78,7 +78,7 @@ function cadQuestao() {
   var form = document.getElementById('cadQuestao');
 
   var nome = $("input[name='nome']").val();
-  var corpo = $('textarea[name="corpo"]').val();
+  var corpo = $("textarea[name='corpo']").val();
 
   form.reset();
 
@@ -102,4 +102,31 @@ function cadQuestao() {
 
   xmlreq.send("nome=" + nome + "&corpo=" + corpo);
 
-}
+};
+
+function getCpfProva() {
+  var cpf = $("input[name='cpf']").val();
+
+  if (cpf != "") {
+    var wrapper = $("select[name='disciplina']");
+    var xmlreq = CriaRequest();
+
+    xmlreq.open("POST", "../controllers/updaters/cadastroProvaControllerUpdater.php", true);
+
+    xmlreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    xmlreq.onreadystatechange = function() {
+      if (xmlreq.readyState == 4) {
+        if (xmlreq.status == 200) {
+          wrapper.html(xmlreq.responseText);
+        }
+        else {
+          wrapper.html("Erro: " + xmlreq.statusText);
+        }
+      }
+    };
+
+    xmlreq.send("cpf=" + cpf);
+  }
+  
+};
