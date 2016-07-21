@@ -78,7 +78,7 @@ function cadQuestao() {
   var form = document.getElementById('cadQuestao');
 
   var nome = $("input[name='nome']").val();
-  var corpo = $("textarea[name='corpo']").val();
+  var corpo = $('textarea[name="corpo"]').val();
 
   form.reset();
 

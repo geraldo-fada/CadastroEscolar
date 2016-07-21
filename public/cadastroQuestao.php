@@ -14,7 +14,7 @@
 
         <!-- CORPO -->
         <div class="form-input">
-          <textarea name="corpo" rows="15" cols="50" required="true" placeholder="Corpo da questão"></textarea>
+          <textarea name="corpo" rows="15" cols="80" required="true" placeholder="Corpo da questão"></textarea>
         </div>
 
         <br>
