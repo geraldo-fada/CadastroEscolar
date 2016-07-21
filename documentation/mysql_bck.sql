@@ -1,10 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `cadastro_escolar` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */;
-USE `cadastro_escolar`;
--- MySQL dump 10.13  Distrib 5.5.49, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.13, for Linux (x86_64)
 --
--- Host: 127.0.0.1    Database: cadastro_escolar
+-- Host: localhost    Database: cadastro_escolar
 -- ------------------------------------------------------
--- Server version	5.5.49-0ubuntu0.14.04.1
+-- Server version	5.7.13-0ubuntu0.16.04.2
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -31,6 +29,16 @@ CREATE TABLE `disciplinas` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `disciplinas`
+--
+
+LOCK TABLES `disciplinas` WRITE;
+/*!40000 ALTER TABLE `disciplinas` DISABLE KEYS */;
+INSERT INTO `disciplinas` VALUES ('Matemática'),('Português');
+/*!40000 ALTER TABLE `disciplinas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `professores`
 --
 
@@ -44,6 +52,16 @@ CREATE TABLE `professores` (
   PRIMARY KEY (`cpf`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `professores`
+--
+
+LOCK TABLES `professores` WRITE;
+/*!40000 ALTER TABLE `professores` DISABLE KEYS */;
+INSERT INTO `professores` VALUES ('22222222222','João Brugas',28);
+/*!40000 ALTER TABLE `professores` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `professores_disciplinas`
@@ -63,6 +81,16 @@ CREATE TABLE `professores_disciplinas` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `professores_disciplinas`
+--
+
+LOCK TABLES `professores_disciplinas` WRITE;
+/*!40000 ALTER TABLE `professores_disciplinas` DISABLE KEYS */;
+INSERT INTO `professores_disciplinas` VALUES ('22222222222','Matemática');
+/*!40000 ALTER TABLE `professores_disciplinas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `professores_turmas`
 --
 
@@ -78,6 +106,16 @@ CREATE TABLE `professores_turmas` (
   CONSTRAINT `professores_turmas_ibfk_2` FOREIGN KEY (`turma_nome`) REFERENCES `turmas` (`nome`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `professores_turmas`
+--
+
+LOCK TABLES `professores_turmas` WRITE;
+/*!40000 ALTER TABLE `professores_turmas` DISABLE KEYS */;
+INSERT INTO `professores_turmas` VALUES ('22222222222','IN114');
+/*!40000 ALTER TABLE `professores_turmas` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `provas`
@@ -99,6 +137,15 @@ CREATE TABLE `provas` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `provas`
+--
+
+LOCK TABLES `provas` WRITE;
+/*!40000 ALTER TABLE `provas` DISABLE KEYS */;
+/*!40000 ALTER TABLE `provas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `provas_questoes`
 --
 
@@ -107,13 +154,22 @@ DROP TABLE IF EXISTS `provas_questoes`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `provas_questoes` (
   `prova_id` int(11) NOT NULL,
-  `questao_id` int(11) NOT NULL,
-  PRIMARY KEY (`prova_id`,`questao_id`),
-  KEY `questao_id` (`questao_id`),
-  CONSTRAINT `provas_questoes_ibfk_1` FOREIGN KEY (`prova_id`) REFERENCES `provas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `provas_questoes_ibfk_2` FOREIGN KEY (`questao_id`) REFERENCES `questoes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  `questao_nome` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`prova_id`,`questao_nome`),
+  KEY `provas_questoes_ibfk_1_idx` (`questao_nome`),
+  CONSTRAINT `provas_questoes_ibfk_1` FOREIGN KEY (`questao_nome`) REFERENCES `questoes` (`nome`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `provas_questoes_ibfk_2` FOREIGN KEY (`prova_id`) REFERENCES `provas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `provas_questoes`
+--
+
+LOCK TABLES `provas_questoes` WRITE;
+/*!40000 ALTER TABLE `provas_questoes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `provas_questoes` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `questoes`
@@ -123,12 +179,20 @@ DROP TABLE IF EXISTS `questoes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `questoes` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `corpo` text COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`,`nome`)
+  `corpo` text CHARACTER SET utf8 NOT NULL,
+  PRIMARY KEY (`nome`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `questoes`
+--
+
+LOCK TABLES `questoes` WRITE;
+/*!40000 ALTER TABLE `questoes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `questoes` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `turmas`
@@ -144,8 +208,14 @@ CREATE TABLE `turmas` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping routines for database 'cadastro_escolar'
+-- Dumping data for table `turmas`
 --
+
+LOCK TABLES `turmas` WRITE;
+/*!40000 ALTER TABLE `turmas` DISABLE KEYS */;
+INSERT INTO `turmas` VALUES ('IN114'),('MA420');
+/*!40000 ALTER TABLE `turmas` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -156,4 +226,4 @@ CREATE TABLE `turmas` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-07-21 15:02:57
+-- Dump completed on 2016-07-21 20:02:22
