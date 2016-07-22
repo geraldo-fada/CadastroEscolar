@@ -21,8 +21,8 @@ function CriaRequest() {
       return request;
 };
 
-function validaCampo(campo_a_validar, campo_wrapper, arquivo_php) {
-  var campo = $("input[name='"+ campo_a_validar +"']").val();
+function validaCampo(tipo_do_campo ,campo_a_validar ,campo_wrapper, arquivo_php) {
+  var campo = $(tipo_do_campo + "[name='"+ campo_a_validar +"']").val();
 
   if (campo != "") {
     var wrapper = $(campo_wrapper);
