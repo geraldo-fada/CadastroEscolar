@@ -21,7 +21,7 @@
         <div class="form-input">
           <i class="fa fa-credit-card-alt" aria-hidden="true"></i>
           <input type="text" name="cpf" maxlength="11" pattern=".{11}" title="No mínimo 11 caracteres" required="true" placeholder="CPF"
-          onblur="validaCampo('cpf', '#query_validate_check', 'cadastroProfessorControllerUpdater');">
+          onblur="validaCampo('input', 'cpf', '#query_validate_check', 'cadastroProfessorControllerUpdater');">
           <div id="query_validate_check"></div>
         </div>
 
