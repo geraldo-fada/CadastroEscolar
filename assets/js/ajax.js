@@ -74,6 +74,34 @@ function cadProfessor() {
   xmlreq.send("nome=" + nome + "&idade=" + idade + "&cpf=" + cpf + "&turma=" + turma + "&disciplina=" + disciplina);
 };
 
+function getCpfProfessor() {
+  var cpf = $("input[name='cpf']").val();
+
+  if (cpf != "") {
+    var wrapper = $("#query_validate_check");
+    console.log(wrapper);
+    var xmlreq = CriaRequest();
+
+    xmlreq.open("POST", "../controllers/updaters/cadastroProfessorControllerUpdater.php", true);
+
+    xmlreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    xmlreq.onreadystatechange = function() {
+      if (xmlreq.readyState == 4) {
+        if (xmlreq.status == 200) {
+          wrapper.html(xmlreq.responseText);
+        }
+        else {
+          wrapper.html("Erro: " + xmlreq.statusText);
+        }
+      }
+    };
+
+    xmlreq.send("cpf=" + cpf);
+  }
+
+}
+
 function cadQuestao() {
   var form = document.getElementById('cadQuestao');
 
@@ -128,5 +156,5 @@ function getCpfProva() {
 
     xmlreq.send("cpf=" + cpf);
   }
-  
+
 };

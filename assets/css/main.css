@@ -145,3 +145,20 @@ main {
 #resultado_query .msg-sucesso i:hover {
   color: #fff;
 }
+
+#query_validate_check, #query_validate_check p, #query_validate_check i {
+  display: inline-block;
+  margin: 0;
+}
+
+#query_validate_check i {
+  padding-right: 0;
+}
+
+#query_validate_check p.msg-sucesso, #query_validate_check i.msg-sucesso {
+  color: #a5d6a7;
+}
+
+#query_validate_check p.msg-erro, #query_validate_check i.msg-erro {
+  color: #e53935;
+}
