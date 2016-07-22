@@ -120,6 +120,7 @@ form div.form-input textarea {
 /* MAIN SECTION */
 main {
   margin-left: 250px;
+  margin-bottom: 50px;
   padding: 0 50px;
 }
 
@@ -161,4 +162,27 @@ main {
 
 #query_validate_check p.msg-erro, #query_validate_check i.msg-erro {
   color: #e53935;
+}
+
+#questoes_adicionadas {
+  margin-left: 45px;
+  display: none;
+}
+
+/* TABELA */
+table, th, td {
+   border-collapse: collapse;
+   margin: 45px 45px 0 45px;
+   border: 1px solid #cfd8dc;
+   padding: 15px;
+   text-align: left;
+}
+
+table .table-check {
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+}
+
+table .table-check:hover {
+  color: #a5d6a7;
 }
