@@ -180,8 +180,11 @@ DROP TABLE IF EXISTS `questoes`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `questoes` (
   `nome` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `disciplina_nome` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `corpo` text CHARACTER SET utf8 NOT NULL,
-  PRIMARY KEY (`nome`)
+  PRIMARY KEY (`nome`),
+  KEY `disciplina_nome` (`disciplina_nome`),
+  CONSTRAINT `questoes_ibfk_1` FOREIGN KEY (`disciplina_nome`) REFERENCES `disciplinas` (`nome`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -191,7 +194,6 @@ CREATE TABLE `questoes` (
 
 LOCK TABLES `questoes` WRITE;
 /*!40000 ALTER TABLE `questoes` DISABLE KEYS */;
-INSERT INTO `questoes` VALUES ('Teste','Quanto é 2 2?\na)42\nb)8\nc)9\nd)22\ne)Peixe, obviamente.'),('Testee','Só um teste');
 /*!40000 ALTER TABLE `questoes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -227,4 +229,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-07-21 21:46:29
+-- Dump completed on 2016-07-22 16:15:03
