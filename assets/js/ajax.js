@@ -106,6 +106,7 @@ function cadQuestao() {
 
   var nome = $("input[name='nome']").val();
   var corpo = $("textarea[name='corpo']").val();
+  var disciplina = $("select[name='disciplina']").val();
 
   form.reset();
 
@@ -127,6 +128,6 @@ function cadQuestao() {
     }
   };
 
-  xmlreq.send("nome=" + nome + "&corpo=" + corpo);
+  xmlreq.send("nome=" + nome + "&corpo=" + corpo + "&disciplina=" + disciplina);
 
 };

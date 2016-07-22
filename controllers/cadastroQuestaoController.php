@@ -1,12 +1,14 @@
 <?php
   require_once 'dbController.php';
 
-  if(isset($_POST["nome"]) && isset($_POST["corpo"])) {
+  if(isset($_POST["nome"]) && isset($_POST["corpo"]) && isset($_POST["disciplina"])) {
     $nome = utf8_decode($_POST["nome"]);
     $corpo = utf8_decode($_POST["corpo"]);
+    $disciplina = utf8_decode($_POST["disciplina"]);
+
 
     try {
-      $con->query("INSERT INTO questoes (nome, corpo) VALUES ('" . $nome . "', '" . $corpo . "' )");
+      $con->query("INSERT INTO questoes VALUES ('" . $nome . "', '" . $corpo . "', '" . $disciplina . "' )");
 
       echo "<div class='msg-sucesso'>
               Questão cadastrado com sucesso!
