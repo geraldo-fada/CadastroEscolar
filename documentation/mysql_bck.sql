@@ -59,7 +59,7 @@ CREATE TABLE `professores` (
 
 LOCK TABLES `professores` WRITE;
 /*!40000 ALTER TABLE `professores` DISABLE KEYS */;
-INSERT INTO `professores` VALUES ('22222222222','João Brugas',28);
+INSERT INTO `professores` VALUES ('13616513165','João Teste',11),('22222222222','João Brugas',28),('33333333333','Teste 1',22),('44444444444','Teste 2',55);
 /*!40000 ALTER TABLE `professores` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -86,7 +86,7 @@ CREATE TABLE `professores_disciplinas` (
 
 LOCK TABLES `professores_disciplinas` WRITE;
 /*!40000 ALTER TABLE `professores_disciplinas` DISABLE KEYS */;
-INSERT INTO `professores_disciplinas` VALUES ('22222222222','Matemática');
+INSERT INTO `professores_disciplinas` VALUES ('22222222222','Matemática'),('33333333333','Matemática'),('13616513165','Português'),('44444444444','Português');
 /*!40000 ALTER TABLE `professores_disciplinas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -113,7 +113,7 @@ CREATE TABLE `professores_turmas` (
 
 LOCK TABLES `professores_turmas` WRITE;
 /*!40000 ALTER TABLE `professores_turmas` DISABLE KEYS */;
-INSERT INTO `professores_turmas` VALUES ('22222222222','IN114');
+INSERT INTO `professores_turmas` VALUES ('13616513165','IN114'),('22222222222','IN114'),('33333333333','IN114'),('44444444444','MA420');
 /*!40000 ALTER TABLE `professores_turmas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -191,6 +191,7 @@ CREATE TABLE `questoes` (
 
 LOCK TABLES `questoes` WRITE;
 /*!40000 ALTER TABLE `questoes` DISABLE KEYS */;
+INSERT INTO `questoes` VALUES ('Teste','Quanto é 2 2?\na)42\nb)8\nc)9\nd)22\ne)Peixe, obviamente.'),('Testee','Só um teste');
 /*!40000 ALTER TABLE `questoes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -226,4 +227,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-07-21 20:02:22
+-- Dump completed on 2016-07-21 21:46:29
