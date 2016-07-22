@@ -8,21 +8,21 @@
         <!-- CPF -->
         <div class="form-input">
           <i class="fa fa-credit-card-alt" aria-hidden="true"></i>
-          <input type="text" name="cpf" maxlength="11" required="true" placeholder="CPF do dono da prova"
-          onblur="validaCampo('cpf', 'select[name=disciplina]', 'cadastroProvaControllerUpdater');">
+          <input type="text" name="cpf" maxlength="11" pattern=".{11}" title="No mínimo 11 caracteres" required="true" placeholder="CPF do dono da prova">
         </div>
 
-        <!-- DISCIPLINA -->
+        <!-- PROCURAR QUESTAO -->
         <div class="form-input">
-          <i class="fa fa-book" aria-hidden="true"></i>
-          <select name="disciplina">
-            <?php
-              $disciplinas = $con->query("SELECT * FROM disciplinas");
-              foreach($disciplinas as $disciplina) {
-                echo "<option>" . utf8_encode($disciplina[0]) . "</option>";
-              }
-            ?>
-          </select>
+          <i class="fa fa-search" aria-hidden="true"></i>
+          <input type="text" name="nome_questao" maxlength="50" placeholder="Pesquisar questao"
+          onblur="validaCampo('input', 'nome_questao', '#query_validate_check', 'cadastroProvaControllerUpdater');">
+        </div>
+        <div id="query_validate_check"></div>
+
+        <div id="questoes_adicionadas">
+          <h4>Questões a serem adicionadas</h4>
+          <ul>
+          </ul>
         </div>
 
         <br>
@@ -31,7 +31,5 @@
         <input type="submit" name="cadastrar" value="Cadastrar">
 
       </form>
-
-      <div id="resultado_query"></div>
 
 <?php require_once "../templates/footerTemplate.php" ?>
