@@ -7,7 +7,9 @@
         <!-- NOME -->
         <div class="form-input">
           <i class="fa fa-file" aria-hidden="true"></i>
-          <input type="text" name="nome" maxlength="50" required="true" placeholder="Nome da questão">
+          <input type="text" name="nome" maxlength="50" required="true" placeholder="Nome da questão"
+          onblur="validaCampo('nome', '#query_validate_check', 'cadastroQuestaoControllerUpdater');">
+          <div id="query_validate_check"></div>
         </div>
 
         <br>

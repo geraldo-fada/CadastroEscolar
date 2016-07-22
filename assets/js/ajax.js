@@ -21,6 +21,33 @@ function CriaRequest() {
       return request;
 };
 
+function validaCampo(campo_a_validar, campo_wrapper, arquivo_php) {
+  var campo = $("input[name='"+ campo_a_validar +"']").val();
+
+  if (campo != "") {
+    var wrapper = $(campo_wrapper);
+    var xmlreq = CriaRequest();
+
+    xmlreq.open("POST", "../controllers/updaters/"+ arquivo_php +".php", true);
+
+    xmlreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    xmlreq.onreadystatechange = function() {
+      if (xmlreq.readyState == 4) {
+        if (xmlreq.status == 200) {
+          wrapper.html(xmlreq.responseText);
+        }
+        else {
+          wrapper.html("Erro: " + xmlreq.statusText);
+        }
+      }
+    };
+
+    xmlreq.send(campo_a_validar + "=" + campo);
+  }
+
+};
+
 function getControllerPessoa(controller, id_div) {
   var nome = $("input[name='nome_search']").val();
   var wrapper = $("#"+ id_div);
@@ -74,34 +101,6 @@ function cadProfessor() {
   xmlreq.send("nome=" + nome + "&idade=" + idade + "&cpf=" + cpf + "&turma=" + turma + "&disciplina=" + disciplina);
 };
 
-function getCpfProfessor() {
-  var cpf = $("input[name='cpf']").val();
-
-  if (cpf != "") {
-    var wrapper = $("#query_validate_check");
-    console.log(wrapper);
-    var xmlreq = CriaRequest();
-
-    xmlreq.open("POST", "../controllers/updaters/cadastroProfessorControllerUpdater.php", true);
-
-    xmlreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-    xmlreq.onreadystatechange = function() {
-      if (xmlreq.readyState == 4) {
-        if (xmlreq.status == 200) {
-          wrapper.html(xmlreq.responseText);
-        }
-        else {
-          wrapper.html("Erro: " + xmlreq.statusText);
-        }
-      }
-    };
-
-    xmlreq.send("cpf=" + cpf);
-  }
-
-}
-
 function cadQuestao() {
   var form = document.getElementById('cadQuestao');
 
@@ -129,32 +128,5 @@ function cadQuestao() {
   };
 
   xmlreq.send("nome=" + nome + "&corpo=" + corpo);
-
-};
-
-function getCpfProva() {
-  var cpf = $("input[name='cpf']").val();
-
-  if (cpf != "") {
-    var wrapper = $("select[name='disciplina']");
-    var xmlreq = CriaRequest();
-
-    xmlreq.open("POST", "../controllers/updaters/cadastroProvaControllerUpdater.php", true);
-
-    xmlreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-    xmlreq.onreadystatechange = function() {
-      if (xmlreq.readyState == 4) {
-        if (xmlreq.status == 200) {
-          wrapper.html(xmlreq.responseText);
-        }
-        else {
-          wrapper.html("Erro: " + xmlreq.statusText);
-        }
-      }
-    };
-
-    xmlreq.send("cpf=" + cpf);
-  }
 
 };
