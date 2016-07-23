@@ -8,10 +8,10 @@
 
 
     try {
-      $con->query("INSERT INTO questoes VALUES ('" . $nome . "', '" . $corpo . "', '" . $disciplina . "' )");
+      $con->query("INSERT INTO questoes VALUES ('" . $nome . "', '" . $disciplina . "', '" . $corpo . "' )");
 
       echo "<div class='msg-sucesso'>
-              Questão cadastrado com sucesso!
+              Questão cadastrada com sucesso!
               <i class='fa fa-times' aria-hidden='true' onclick=\"this.parentElement.style.display='none';\"></i>
             </div>";
     }
