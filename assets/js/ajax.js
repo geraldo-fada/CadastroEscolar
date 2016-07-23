@@ -19,12 +19,12 @@ function CriaRequest() {
       alert("Seu navegador não suporta Ajax, por favor faça atualização do navegador.");
    else
       return request;
-};
+}
 
 function validaCampo(tipo_do_campo ,campo_a_validar ,campo_wrapper, arquivo_php) {
   var campo = $(tipo_do_campo + "[name='"+ campo_a_validar +"']").val();
 
-  if (campo != "") {
+  if (campo !== "") {
     var wrapper = $(campo_wrapper);
     var xmlreq = CriaRequest();
 
@@ -46,7 +46,7 @@ function validaCampo(tipo_do_campo ,campo_a_validar ,campo_wrapper, arquivo_php)
     xmlreq.send(campo_a_validar + "=" + campo);
   }
 
-};
+}
 
 function getControllerPessoa(controller, id_div) {
   var nome = $("input[name='nome_search']").val();
@@ -67,7 +67,7 @@ function getControllerPessoa(controller, id_div) {
   };
 
   xmlreq.send(null);
-};
+}
 
 function cadProfessor() {
   var form = document.getElementById('cadProfessor');
@@ -99,7 +99,7 @@ function cadProfessor() {
   };
 
   xmlreq.send("nome=" + nome + "&idade=" + idade + "&cpf=" + cpf + "&turma=" + turma + "&disciplina=" + disciplina);
-};
+}
 
 function cadQuestao() {
   var form = document.getElementById('cadQuestao');
@@ -130,4 +130,4 @@ function cadQuestao() {
 
   xmlreq.send("nome=" + nome + "&corpo=" + corpo + "&disciplina=" + disciplina);
 
-};
+}
