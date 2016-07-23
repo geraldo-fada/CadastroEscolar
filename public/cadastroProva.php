@@ -19,17 +19,17 @@
         </div>
         <div id="query_validate_check"></div>
 
-        <div id="questoes_adicionadas">
-          <h4>Questões a serem adicionadas</h4>
-          <ul>
-          </ul>
-        </div>
-
         <br>
 
         <!-- CADASTRO -->
         <input type="submit" name="cadastrar" value="Cadastrar">
 
       </form>
+
+      <div id="questoes_adicionadas">
+        <h4>Questões a serem adicionadas</h4>
+        <ul>
+        </ul>
+      </div>
 
 <?php require_once "../templates/footerTemplate.php" ?>

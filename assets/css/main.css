@@ -100,6 +100,7 @@ input[type=submit] {
 }
 
 form {
+  float: left;
   max-width: 1000px;
 }
 
@@ -119,6 +120,7 @@ form div.form-input textarea {
 
 /* MAIN SECTION */
 main {
+  display: inline-block;
   margin-left: 250px;
   margin-bottom: 50px;
   padding: 0 50px;
@@ -165,8 +167,25 @@ main {
 }
 
 #questoes_adicionadas {
-  margin-left: 45px;
+  float: right;
+  margin-left: 10px;
+  padding: 20px;
   display: none;
+  border: 1px solid #cfd8dc;
+  border-radius: 5px;
+}
+
+#questoes_adicionadas h4 {
+  margin: 0;
+}
+
+#questoes_adicionadas ul {
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+
+#questoes_adicionadas li {
+  padding-bottom: 10px;
 }
 
 /* TABELA */
