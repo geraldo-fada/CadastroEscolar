@@ -17,12 +17,24 @@ $(document).ready(function() {
 function addQuestao(id) {
   prova = $(id).parent().parent().find('td:eq(1)').text();
   $('#questoes_adicionadas').slideDown();
+  var questoesul = $('#questoes_adicionadas ul');
+  var questoesli = $('#questoes_adicionadas li');
 
   //Evitar de adicionar questões iguais!
-  $('#questoes_adicionadas li').each(function () {
-    // if ($(this).text() != prova) {
-    //   $('#questoes_adicionadas ul').append("<li>"+prova+"</li>");
-    // }
-  });
+  if (questoesli.length) {
+    var count = 0;
+    questoesli.each(function () {
+      console.log($(this).text());
+      if ($(this).text() == prova) {
+        count++;
+      }
+    });
+    if (count === 0) {
+      questoesul.append("<li>"+prova+"</li>");
+    }
+  }
+  else {
+    questoesul.append("<li>"+prova+"</li>");
+  }
 
 }
