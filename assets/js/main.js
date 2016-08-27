@@ -15,12 +15,14 @@ $(document).ready(function() {
 });
 
 function addQuestao(id) {
-  prova = $(id).parent().parent().find('td:eq(2)').text();
+  prova = $(id).parent().parent().find('td:eq(1)').text();
   $('#questoes_adicionadas').slideDown();
 
-
-  if(prova) {
-    $('#questoes_adicionadas ul').append("<li>"+prova+"</li>");
-  }
+  //Evitar de adicionar questões iguais!
+  $('#questoes_adicionadas li').each(function () {
+    // if ($(this).text() != prova) {
+    //   $('#questoes_adicionadas ul').append("<li>"+prova+"</li>");
+    // }
+  });
 
 }
