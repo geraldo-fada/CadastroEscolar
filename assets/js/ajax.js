@@ -43,6 +43,7 @@ function validaCampo(tipo_do_campo ,campo_a_validar ,campo_wrapper, arquivo_php)
       }
     };
 
+    $("#query_validate_check").css({"display": "inline-block"});
     xmlreq.send(campo_a_validar + "=" + campo);
   }
 
@@ -98,6 +99,7 @@ function cadProfessor() {
     }
   };
 
+  $("#query_validate_check").css({"display": "none"});
   xmlreq.send("nome=" + nome + "&idade=" + idade + "&cpf=" + cpf + "&turma=" + turma + "&disciplina=" + disciplina);
 }
 
@@ -128,6 +130,7 @@ function cadQuestao() {
     }
   };
 
+  $("#query_validate_check").css({"display": "none"});
   xmlreq.send("nome=" + nome + "&corpo=" + corpo + "&disciplina=" + disciplina);
 
 }

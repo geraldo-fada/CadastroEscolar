@@ -101,7 +101,7 @@ input[type=submit] {
 
 form {
   float: left;
-  max-width: 1000px;
+  max-width: 800px;
 }
 
 form div.form-input {
@@ -134,13 +134,13 @@ main {
   background-color: #a5d6a7;
   max-width: 500px;
   border-radius: 5px;
-
+  display: inline-block;
   transition: all ease-in-out 0.2s;
 }
 
 #resultado_query .msg-sucesso i {
-  float: right;
   cursor: pointer;
+  margin-left: 20px;
 
   transition: all ease-in-out 0.2s;
 }
