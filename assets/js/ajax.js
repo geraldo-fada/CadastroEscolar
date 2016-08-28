@@ -134,3 +134,37 @@ function cadQuestao() {
   xmlreq.send("nome=" + nome + "&corpo=" + corpo + "&disciplina=" + disciplina);
 
 }
+
+function cadProva() {
+  var form = document.getElementById('cadProva');
+  var cpf = $("input[name='cpf']").val();
+  var questoes = [];
+
+  $('#questoes_adicionadas li').each(function() {
+    questoes.push($(this).text());
+  });
+
+  form.reset();
+
+  var wrapper = $("#resultado_query");
+  var xmlreq = CriaRequest();
+
+  xmlreq.open("POST", "../controllers/cadastroProvaController.php", true);
+
+  xmlreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+  xmlreq.onreadystatechange = function() {
+    if (xmlreq.readyState == 4) {
+      if (xmlreq.status == 200) {
+        wrapper.html(xmlreq.responseText);
+      }
+      else {
+        wrapper.html("Erro: " + xmlreq.statusText);
+      }
+    }
+  };
+
+  $("#query_validate_check").css({"display": "none"});
+  xmlreq.send("cpf=" + cpf + "&questoes=" + questoes);
+
+}
