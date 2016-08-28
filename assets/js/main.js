@@ -20,11 +20,9 @@ function addQuestao(id) {
   var questoesul = $('#questoes_adicionadas ul');
   var questoesli = $('#questoes_adicionadas li');
 
-  //Evitar de adicionar questões iguais!
   if (questoesli.length) {
     var count = 0;
     questoesli.each(function () {
-      console.log($(this).text());
       if ($(this).text() == prova) {
         count++;
       }

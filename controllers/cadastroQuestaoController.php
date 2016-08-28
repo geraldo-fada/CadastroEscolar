@@ -6,7 +6,6 @@
     $corpo = utf8_decode($_POST["corpo"]);
     $disciplina = utf8_decode($_POST["disciplina"]);
 
-
     try {
       $con->query("INSERT INTO questoes VALUES ('" . $nome . "', '" . $disciplina . "', '" . $corpo . "' )");
 

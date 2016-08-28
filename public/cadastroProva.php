@@ -1,5 +1,4 @@
-<?php require_once "../controllers/dbController.php";
-      require_once "../templates/headerTemplate.php"; ?>
+<?php require_once "../templates/headerTemplate.php" ?>
 
       <h1>Cadastro de provas</h1>
 
@@ -31,5 +30,7 @@
         <ul>
         </ul>
       </div>
+
+      <div id="resultado_query"></div>
 
 <?php require_once "../templates/footerTemplate.php" ?>
