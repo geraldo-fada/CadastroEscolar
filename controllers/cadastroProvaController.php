@@ -6,7 +6,7 @@
     $questoes = $_POST["questoes"];
 
     try {
-      $con->query("INSERT INTO provas (cpf, disciplina_nome) VALUES ('" . $cpf . "', 'Matemática');");
+      $con->query("INSERT INTO provas (professor_cpf, disciplina_nome) VALUES ('" . $cpf . "', 'Matemática');");
 
       foreach($questoes as $questao) {
         echo $questao;
