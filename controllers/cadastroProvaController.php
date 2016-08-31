@@ -3,14 +3,14 @@
 
   if(isset($_POST["cpf"]) && isset($_POST["questoes"])) {
     $cpf = utf8_decode($_POST["cpf"]);
-    $disciplina = "Matemática";
+    $disciplina = utf8_decode('Matemática');
     $questoes = explode(",", $_POST["questoes"]);
 
     try {
       $con->query("INSERT INTO provas (professor_cpf, disciplina_nome) VALUES ('" . $cpf . "', '" . $disciplina . "')");
 
       foreach($questoes as $questao) {
-        $con->query("INSERT INTO provas_questoes VALUES (LAST_INSERT_ID(), '" . utf8_decode($questao) . "')");
+       $con->query("INSERT INTO provas_questoes VALUES (LAST_INSERT_ID(), '" . utf8_decode($questao) . "')");
       }
 
       echo "<div class='msg-sucesso'>
