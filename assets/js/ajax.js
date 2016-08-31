@@ -200,3 +200,33 @@ function cadTurma() {
   xmlreq.send("turma=" + turma);
 
 }
+
+function cadDisciplina() {
+  var form = document.getElementById('cadDisciplina');
+
+  var disciplina = $("input[name='disciplina']").val();
+
+  form.reset();
+
+  var wrapper = $("#resultado_query");
+  var xmlreq = CriaRequest();
+
+  xmlreq.open("POST", "../controllers/cadastroDisciplinaController.php", true);
+
+  xmlreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+  xmlreq.onreadystatechange = function() {
+    if (xmlreq.readyState == 4) {
+      if (xmlreq.status == 200) {
+        wrapper.html(xmlreq.responseText);
+      }
+      else {
+        wrapper.html("Erro: " + xmlreq.statusText);
+      }
+    }
+  };
+
+  $("#query_validate_check").css({"display": "none"});
+  xmlreq.send("disciplina=" + disciplina);
+
+}
