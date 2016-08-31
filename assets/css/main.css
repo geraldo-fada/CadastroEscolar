@@ -8,7 +8,7 @@ nav {
   top: 0;
   bottom: 0;
 
-  width: 250px;
+  width: 280px;
   background-color: #37474f;
   color: #dedede;
 }
@@ -121,7 +121,7 @@ form div.form-input textarea {
 /* MAIN SECTION */
 main {
   display: inline-block;
-  margin-left: 250px;
+  margin-left: 280px;
   margin-bottom: 50px;
   padding: 0 50px;
 }
