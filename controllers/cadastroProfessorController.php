@@ -9,9 +9,9 @@
     $disciplina = utf8_decode($_POST["disciplina"]);
 
     try {
-      $con->query("INSERT INTO professores VALUES ('" . $cpf . "', '" . $nome . "', " . $idade . ")");
-      $con->query("INSERT INTO professores_disciplinas VALUES ('" . $cpf . "', '" . $disciplina . "')");
-      $con->query("INSERT INTO professores_turmas VALUES ('" . $cpf . "', '" . $turma . "')");
+      $con->query("INSERT INTO professores VALUES ('" . $cpf . "', '" . $nome . "', '" . $idade . "');
+                   INSERT INTO professores_disciplinas VALUES ('" . $cpf . "', '" . $disciplina . "');
+                   INSERT INTO professores_turmas VALUES ('" . $cpf . "', '" . $turma . "')" );
 
       echo "<div class='msg-sucesso'>
               Professor cadastrado com sucesso!
