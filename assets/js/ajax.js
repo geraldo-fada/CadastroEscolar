@@ -170,3 +170,33 @@ function cadProva() {
   xmlreq.send("cpf=" + cpf + "&questoes=" + questoes);
 
 }
+
+function cadTurma() {
+  var form = document.getElementById('cadTurma');
+
+  var turma = $("input[name='turma']").val();
+
+  form.reset();
+
+  var wrapper = $("#resultado_query");
+  var xmlreq = CriaRequest();
+
+  xmlreq.open("POST", "../controllers/cadastroTurmaController.php", true);
+
+  xmlreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+  xmlreq.onreadystatechange = function() {
+    if (xmlreq.readyState == 4) {
+      if (xmlreq.status == 200) {
+        wrapper.html(xmlreq.responseText);
+      }
+      else {
+        wrapper.html("Erro: " + xmlreq.statusText);
+      }
+    }
+  };
+
+  $("#query_validate_check").css({"display": "none"});
+  xmlreq.send("turma=" + turma);
+
+}
