@@ -48,6 +48,8 @@
           <ul class="nav-dropdown">
             <li><a href="cadastroTurma.php"><i class="fa fa-pencil" aria-hidden="true"></i>Cadastrar turma</a></li>
             <li><a href="consultaTurma.php"><i class="fa fa-search" aria-hidden="true"></i>Consultar turma</a></li>
+            <li><a href="cadastroDisciplina.php"><i class="fa fa-pencil" aria-hidden="true"></i>Cadastrar disciplina</a></li>
+            <li><a href="consultaDisciplina.php"><i class="fa fa-search" aria-hidden="true"></i>Consultar disciplina</a></li>
           </ul>
         </li>
 
