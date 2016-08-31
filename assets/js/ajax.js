@@ -165,6 +165,8 @@ function cadProva() {
   };
 
   $("#query_validate_check").css({"display": "none"});
+  $("#questoes_adicionadas ul").empty();
+  $("#questoes_adicionadas").css({"display": "none"});
   xmlreq.send("cpf=" + cpf + "&questoes=" + questoes);
 
 }
