@@ -1,3 +1,4 @@
+// Funções genericas
 function CriaRequest() {
    try {
       request = new XMLHttpRequest();
@@ -49,6 +50,31 @@ function validaCampo(tipo_do_campo ,campo_a_validar ,campo_wrapper, arquivo_php)
 
 }
 
+function consultarCampo(nome_updater) {
+  var pesquisa = $("input[name='pesquisa']").val();
+  var campo = $("select[name='campo']").val();
+
+  var wrapper = $("#query_validate_check");
+  var xmlreq = CriaRequest();
+
+  xmlreq.open("POST", "../controllers/updaters/consulta" + nome_updater + "ControllerUpdater.php", true);
+
+  xmlreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+  xmlreq.onreadystatechange = function() {
+    if (xmlreq.readyState == 4) {
+      if (xmlreq.status == 200) {
+        wrapper.html(xmlreq.responseText);
+      }
+      else {
+        wrapper.html("Erro: " + xmlreq.statusText);
+      }
+    }
+  };
+
+  xmlreq.send("pesquisa=" + pesquisa + "&campo=" + campo);
+}
+
 function getControllerPessoa(controller, id_div) {
   var nome = $("input[name='nome_search']").val();
   var wrapper = $("#"+ id_div);
@@ -70,6 +96,7 @@ function getControllerPessoa(controller, id_div) {
   xmlreq.send(null);
 }
 
+// Professores
 function cadProfessor() {
   var form = document.getElementById('cadProfessor');
 
@@ -103,6 +130,7 @@ function cadProfessor() {
   xmlreq.send("nome=" + nome + "&idade=" + idade + "&cpf=" + cpf + "&turma=" + turma + "&disciplina=" + disciplina);
 }
 
+// Questões
 function cadQuestao() {
   var form = document.getElementById('cadQuestao');
 
@@ -135,6 +163,7 @@ function cadQuestao() {
 
 }
 
+// Provas
 function cadProva() {
   var form = document.getElementById('cadProva');
   var cpf = $("input[name='cpf']").val();
@@ -171,6 +200,7 @@ function cadProva() {
 
 }
 
+// Turmas
 function cadTurma() {
   var form = document.getElementById('cadTurma');
 
@@ -201,6 +231,7 @@ function cadTurma() {
 
 }
 
+// Disciplinas
 function cadDisciplina() {
   var form = document.getElementById('cadDisciplina');
 
