@@ -6,16 +6,25 @@
     $corpo = utf8_decode($_POST["corpo"]);
     $disciplina = utf8_decode($_POST["disciplina"]);
 
-    try {
-      $con->query("INSERT INTO questoes VALUES ('" . $nome . "', '" . $disciplina . "', '" . $corpo . "' )");
-
-      echo "<div class='msg-sucesso'>
-              Questão cadastrada com sucesso!
-              <i class='fa fa-times' aria-hidden='true' onclick=\"this.parentElement.style.display='none';\"></i>
+    $questoes = $con->query("SELECT * FROM questoes WHERE nome = '" . $nome . "' ");
+    if ($questoes->rowCount() > 0) {
+      echo "<div class='msg-erro'>
+            Nome da questão já foi utilizado!
+            <i class='fa fa-times' aria-hidden='true' onclick=\"this.parentElement.style.display='none';\"></i>
             </div>";
     }
-    catch(PDOException $e) {
-      echo "Error: " . $e;
+    else {
+      try {
+        $con->query("INSERT INTO questoes VALUES ('" . $nome . "', '" . $disciplina . "', '" . $corpo . "' )");
+
+        echo "<div class='msg-sucesso'>
+                Questão cadastrada com sucesso!
+                <i class='fa fa-times' aria-hidden='true' onclick=\"this.parentElement.style.display='none';\"></i>
+              </div>";
+      }
+      catch(PDOException $e) {
+        echo "Error: " . $e;
+      }
     }
 
   }

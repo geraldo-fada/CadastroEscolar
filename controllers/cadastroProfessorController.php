@@ -8,18 +8,28 @@
     $turma = utf8_decode($_POST["turma"]);
     $disciplina = utf8_decode($_POST["disciplina"]);
 
-    try {
-      $con->query("INSERT INTO professores VALUES ('" . $cpf . "', '" . $nome . "', '" . $idade . "');
-                   INSERT INTO professores_disciplinas VALUES ('" . $cpf . "', '" . $disciplina . "');
-                   INSERT INTO professores_turmas VALUES ('" . $cpf . "', '" . $turma . "')" );
+    $cpfs = $con->query("SELECT * FROM professores WHERE cpf='" . $cpf . "' ");
 
-      echo "<div class='msg-sucesso'>
-              Professor cadastrado com sucesso!
-              <i class='fa fa-times' aria-hidden='true' onclick=\"this.parentElement.style.display='none';\"></i>
+    if ($cpfs->rowCount() > 0) {
+      echo "<div class='msg-erro'>
+            CPF já cadastrado!
+            <i class='fa fa-times' aria-hidden='true' onclick=\"this.parentElement.style.display='none';\"></i>
             </div>";
     }
-    catch(PDOException $e) {
-      echo "Error: " . $e;
+    else {
+      try {
+        $con->query("INSERT INTO professores VALUES ('" . $cpf . "', '" . $nome . "', '" . $idade . "');
+                     INSERT INTO professores_disciplinas VALUES ('" . $cpf . "', '" . $disciplina . "');
+                     INSERT INTO professores_turmas VALUES ('" . $cpf . "', '" . $turma . "')" );
+
+        echo "<div class='msg-sucesso'>
+                Professor cadastrado com sucesso!
+                <i class='fa fa-times' aria-hidden='true' onclick=\"this.parentElement.style.display='none';\"></i>
+              </div>";
+      }
+      catch(PDOException $e) {
+        echo "Error: " . $e;
+      }
     }
 
   }
