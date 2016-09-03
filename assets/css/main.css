@@ -149,13 +149,34 @@ main {
   color: #fff;
 }
 
+#resultado_query .msg-erro {
+  margin: 50px 0 0 45px;
+  padding: 20px;
+  background-color: #e53935;
+  max-width: 500px;
+  border-radius: 5px;
+  display: inline-block;
+  transition: all ease-in-out 0.2s;
+}
+
+#resultado_query .msg-erro i {
+  cursor: pointer;
+  margin-left: 20px;
+
+  transition: all ease-in-out 0.2s;
+}
+
+#resultado_query .msg-erro i:hover {
+  color: #fff;
+}
+
 #query_validate_check, #query_validate_check p, #query_validate_check i {
   display: inline-block;
   margin: 0;
 }
 
 #query_validate_check i {
-  padding-right: 0;
+  padding: 10px 0 10px 10px;
 }
 
 #query_validate_check p.msg-sucesso, #query_validate_check i.msg-sucesso {
