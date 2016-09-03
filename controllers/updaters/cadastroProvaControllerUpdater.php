@@ -1,11 +1,12 @@
 <?php
   require_once '../dbController.php';
 
-  if(isset($_POST["nome_questao"])) {
+  if(isset($_POST["nome_questao"]) && isset($_POST["disciplina"])) {
     $nome_questao = utf8_decode($_POST["nome_questao"]);
+    $disciplina = utf8_decode($_POST["disciplina"]);
 
     try {
-      $questoes = $con->query("SELECT disciplina_nome, nome, corpo FROM questoes WHERE nome LIKE '" . $nome_questao . "%' ");
+      $questoes = $con->query("SELECT disciplina_nome, nome, corpo FROM questoes WHERE nome LIKE '" . $nome_questao . "%' AND disciplina_nome = '" . $disciplina . "' ");
 
       echo "<table>
               <tr>

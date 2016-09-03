@@ -19,7 +19,7 @@
         <div class="form-input">
           <i class="fa fa-search" aria-hidden="true"></i>
           <input type="text" name="nome_questao" maxlength="50" placeholder="Pesquisar questao"
-          onblur="validaCampo('input', 'nome_questao', '#query_table', 'cadastroProvaControllerUpdater');">
+          onblur="getQuestaoProva();">
         </div>
 
         <!-- DISCIPLINA -->

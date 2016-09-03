@@ -201,6 +201,33 @@ function cadProva() {
 
 }
 
+function getQuestaoProva() {
+  var nome_questao = $("input[name='nome_questao']").val();
+  var disciplina = $("select[name='disciplina']").val();
+
+  if (nome_questao !== "" && disciplina !== "") {
+    var wrapper = $("#query_table");
+    var xmlreq = CriaRequest();
+
+    xmlreq.open("POST", "../controllers/updaters/cadastroProvaControllerUpdater.php", true);
+
+    xmlreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    xmlreq.onreadystatechange = function() {
+      if (xmlreq.readyState == 4) {
+        if (xmlreq.status == 200) {
+          wrapper.html(xmlreq.responseText);
+        }
+        else {
+          wrapper.html("Erro: " + xmlreq.statusText);
+        }
+      }
+    };
+
+    $("#query_validate_check").css({"display": "inline-block"});
+    xmlreq.send("nome_questao=" + nome_questao + "&disciplina=" + disciplina);
+  }
+}
 // Turmas
 function cadTurma() {
   var form = document.getElementById('cadTurma');
