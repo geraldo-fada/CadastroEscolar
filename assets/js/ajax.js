@@ -167,6 +167,7 @@ function cadQuestao() {
 function cadProva() {
   var form = document.getElementById('cadProva');
   var cpf = $("input[name='cpf']").val();
+  var disciplina = $("select[name='disciplina']").val();
   var questoes = [];
 
   $('#questoes_adicionadas li').each(function() {
@@ -196,7 +197,7 @@ function cadProva() {
   $("#query_validate_check").css({"display": "none"});
   $("#questoes_adicionadas ul").empty();
   $("#questoes_adicionadas").css({"display": "none"});
-  xmlreq.send("cpf=" + cpf + "&questoes=" + questoes);
+  xmlreq.send("cpf=" + cpf + "&questoes=" + questoes + "&disciplina=" + disciplina);
 
 }
 
