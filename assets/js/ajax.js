@@ -228,6 +228,7 @@ function getQuestaoProva() {
     xmlreq.send("nome_questao=" + nome_questao + "&disciplina=" + disciplina);
   }
 }
+
 // Turmas
 function cadTurma() {
   var form = document.getElementById('cadTurma');
