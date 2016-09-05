@@ -72,6 +72,7 @@ function consultarCampo(nome_updater) {
     }
   };
 
+  $("#query_validate_check").css({"display": "inline-block"});
   xmlreq.send("pesquisa=" + pesquisa + "&campo=" + campo);
 }
 
