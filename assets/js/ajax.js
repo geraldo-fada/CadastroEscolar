@@ -230,6 +230,35 @@ function getQuestaoProva() {
   }
 }
 
+function geraProva() {
+  var form = document.getElementById('geraProva');
+
+  var id_prova = $("input[name='id_prova']").val();
+
+  form.reset();
+
+  var wrapper = $("#resultado_query");
+  var xmlreq = CriaRequest();
+
+  xmlreq.open("POST", "../controllers/geraProvaController.php", true);
+
+  xmlreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+  xmlreq.onreadystatechange = function() {
+    if (xmlreq.readyState == 4) {
+      if (xmlreq.status == 200) {
+        wrapper.html(xmlreq.responseText);
+      }
+      else {
+        wrapper.html("Erro: " + xmlreq.statusText);
+      }
+    }
+  };
+
+  $("#query_validate_check").css({"display": "none"});
+  xmlreq.send("id_prova=" + id_prova);
+}
+
 // Turmas
 function cadTurma() {
   var form = document.getElementById('cadTurma');

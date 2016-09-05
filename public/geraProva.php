@@ -2,7 +2,7 @@
 
       <h1>Gerar provas</h1>
 
-      <form id="consProva" method="post" onsubmit="geraProva(); return false;" action="">
+      <form id="geraProva" method="post" onsubmit="geraProva(); return false;" action="">
 
         <!-- PESQUISAR POR -->
         <div class="form-input">
@@ -29,6 +29,7 @@
           <!-- GERAR PROVA -->
           <input type="submit" name="gerar" value="Gerar Prova" style="margin-left: 5px;">
         </div>
+        <div id="resultado_query"></div>
 
       </form>
 
