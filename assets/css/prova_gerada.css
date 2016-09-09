@@ -1,0 +1,24 @@
+.cabecalho {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.cabecalho p {
+  font-size: 14px;
+  margin: 0 0 10px 0;
+}
+
+.cabecalho h4 {
+  font-size: 20px;
+  margin: 0 0 10px 0;
+}
+
+.corpo {
+  margin: 0 0 30px 10px;
+}
+
+.questao_num {
+  margin: 0;
+}

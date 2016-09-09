@@ -2,7 +2,8 @@
 
       <h1>Gerar provas</h1>
 
-      <form id="geraProva" method="post" onsubmit="geraProva(); return false;" action="">
+      <!-- Não funciona com ajax, por isso tem um action direto -->
+      <form id="geraProva" method="post" action="../controllers/geraProvaController.php" target="_blank">
 
         <!-- PESQUISAR POR -->
         <div class="form-input">
@@ -29,7 +30,6 @@
           <!-- GERAR PROVA -->
           <input type="submit" name="gerar" value="Gerar Prova" style="margin-left: 5px;">
         </div>
-        <div id="resultado_query"></div>
 
       </form>
 
