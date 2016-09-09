@@ -15,7 +15,7 @@
     }
     else {
       try {
-        $con->query("INSERT INTO questoes VALUES ('" . $nome . "', '" . $disciplina . "', '" . $corpo . "' )");
+        $con->query("INSERT INTO questoes VALUES ('" . $nome . "', '" . $disciplina . "', '" . nl2br($corpo) . "' )");
 
         echo "<div class='msg-sucesso'>
                 Questão cadastrada com sucesso!
