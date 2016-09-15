@@ -33,6 +33,16 @@
               }
             ?>
           </select>
+          <select name="dificuldade">
+            <option>Fácil</option>
+            <option>Médio</option>
+            <option>Difícil</option>
+          </select>
+          <select name="ano">
+            <option>1 ano</option>
+            <option>2 ano</option>
+            <option>3 ano</option>
+          </select>
         </div>
         <div id="query_table"></div>
 

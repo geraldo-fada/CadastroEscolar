@@ -138,6 +138,8 @@ function cadQuestao() {
   var nome = $("input[name='nome']").val();
   var corpo = $("textarea[name='corpo']").val();
   var disciplina = $("select[name='disciplina']").val();
+  var dificuldade = $("select[name='dificuldade']").val();
+  var ano = $("select[name='ano']").val();
 
   form.reset();
 
@@ -160,7 +162,7 @@ function cadQuestao() {
   };
 
   $("#query_validate_check").css({"display": "none"});
-  xmlreq.send("nome=" + nome + "&corpo=" + corpo + "&disciplina=" + disciplina);
+  xmlreq.send("nome=" + nome + "&corpo=" + corpo + "&disciplina=" + disciplina + "&dificuldade=" + dificuldade + "&ano=" + ano);
 
 }
 
@@ -205,6 +207,9 @@ function cadProva() {
 function getQuestaoProva() {
   var nome_questao = $("input[name='nome_questao']").val();
   var disciplina = $("select[name='disciplina']").val();
+  var dificuldade = $("select[name='dificuldade']").val();
+  var ano = $("select[name='ano']").val();
+
 
   if (nome_questao !== "" && disciplina !== "") {
     var wrapper = $("#query_table");
@@ -226,7 +231,7 @@ function getQuestaoProva() {
     };
 
     $("#query_validate_check").css({"display": "inline-block"});
-    xmlreq.send("nome_questao=" + nome_questao + "&disciplina=" + disciplina);
+    xmlreq.send("nome_questao=" + nome_questao + "&disciplina=" + disciplina + "&dificuldade=" + dificuldade + "&ano=" + ano);
   }
 }
 
