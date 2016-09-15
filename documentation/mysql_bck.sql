@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2
+-- version 4.6.1
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Sep 02, 2016 at 01:38 AM
--- Server version: 5.7.13-0ubuntu0.16.04.2
--- PHP Version: 7.0.8-0ubuntu0.16.04.2
+-- Host: 127.0.0.1
+-- Generation Time: Sep 16, 2016 at 12:27 AM
+-- Server version: 10.1.13-MariaDB
+-- PHP Version: 7.0.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -35,8 +35,6 @@ CREATE TABLE `disciplinas` (
 --
 
 INSERT INTO `disciplinas` (`nome`) VALUES
-('Biologia'),
-('Física'),
 ('Matemática'),
 ('Português');
 
@@ -57,11 +55,9 @@ CREATE TABLE `professores` (
 --
 
 INSERT INTO `professores` (`cpf`, `nome`, `idade`) VALUES
-('11111111111', 'Teste111', 11),
-('13616513165', 'João Teste', 11),
-('22222222222', 'João Brugas', 28),
-('33333333333', 'Teste 1', 22),
-('44444444444', 'Teste 2', 55);
+('00000000000', 'Teste', 0),
+('11111111111', 'Josicreudo', 11),
+('22222222222', 'Aninha Tomate', 22);
 
 -- --------------------------------------------------------
 
@@ -79,11 +75,9 @@ CREATE TABLE `professores_disciplinas` (
 --
 
 INSERT INTO `professores_disciplinas` (`professor_cpf`, `disciplina_nome`) VALUES
+('00000000000', 'Matemática'),
 ('11111111111', 'Matemática'),
-('22222222222', 'Matemática'),
-('33333333333', 'Matemática'),
-('13616513165', 'Português'),
-('44444444444', 'Português');
+('22222222222', 'Português');
 
 -- --------------------------------------------------------
 
@@ -101,11 +95,9 @@ CREATE TABLE `professores_turmas` (
 --
 
 INSERT INTO `professores_turmas` (`professor_cpf`, `turma_nome`) VALUES
-('11111111111', 'IN114'),
-('13616513165', 'IN114'),
-('22222222222', 'IN114'),
-('33333333333', 'IN114'),
-('44444444444', 'MA420');
+('00000000000', 'IN123'),
+('11111111111', 'IN123'),
+('22222222222', 'MA420');
 
 -- --------------------------------------------------------
 
@@ -124,7 +116,7 @@ CREATE TABLE `provas` (
 --
 
 INSERT INTO `provas` (`id`, `professor_cpf`, `disciplina_nome`) VALUES
-(1, '22222222222', 'Matemática');
+(9, '00000000000', 'Matemática');
 
 -- --------------------------------------------------------
 
@@ -142,8 +134,10 @@ CREATE TABLE `provas_questoes` (
 --
 
 INSERT INTO `provas_questoes` (`prova_id`, `questao_nome`) VALUES
-(1, 'Com éç'),
-(1, 'Teste');
+(9, '1 1'),
+(9, 'Caicaibalao'),
+(9, 'Caiu'),
+(9, 'Chablablau');
 
 -- --------------------------------------------------------
 
@@ -154,24 +148,21 @@ INSERT INTO `provas_questoes` (`prova_id`, `questao_nome`) VALUES
 CREATE TABLE `questoes` (
   `nome` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `disciplina_nome` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `corpo` text CHARACTER SET utf8 NOT NULL
+  `corpo` text CHARACTER SET utf8 NOT NULL,
+  `dificuldade` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `ano` varchar(10) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `questoes`
 --
 
-INSERT INTO `questoes` (`nome`, `disciplina_nome`, `corpo`) VALUES
-('A', 'Matemática', 'e'),
-('Com éç', 'Matemática', '$3242342423'),
-('Mais um test', 'Matemática', '2=1'),
-('Mat', 'Matemática', 'Uma questão é legal. Mas isso é ok. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
-('Nova', 'Matemática', '429jaçslfjaçslfjçl'),
-('Outro teste', 'Matemática', 'Olar'),
-('Raaa', 'Matemática', 'Afdsaf'),
-('Rww', 'Matemática', 'Gasdwde'),
-('Ssss', 'Matemática', 'sssss'),
-('Teste', 'Matemática', 'Teste');
+INSERT INTO `questoes` (`nome`, `disciplina_nome`, `corpo`, `dificuldade`, `ano`) VALUES
+('1 1', 'Matemática', 'Quanto é 1 1?', 'Fácil', '1 ano'),
+('Caicaibalao', 'Português', 'vida erat vitae hendrerit. Nam ullamcorper nulla sed posuere faucibus. Nullam dignissim erat eget sapien fringilla, at condimentum justo ullamc', 'Difícil', '2 ano'),
+('Caiu', 'Português', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed urna dui, pretium sit amet tristique ac, fermentum ac libero. Sed at urna dui. Vivamus dapibus gra', 'Médio', '1 ano'),
+('Chablablau', 'Português', 'orper. Phasellus blandit enim maximus porttitor dictum. Nulla eleifend aliquam scelerisque. Suspendisse a nisl sed sem convallis tristique. Pellentesque non hendrerit dui, vitae tincidunt neque. ', 'Fácil', '3 ano'),
+('Chinbinha', 'Matemática', 'Aliquam mollis ultrices libero at cursus. Fusce sagittis sed sapien eget dictum. Proin interdum nisl justo, eu efficitur risus vestibulum id. Curabitur tempor volutpat volutpat. Morbi vehicula luctus ex vel placerat. In hac habitasse platea dictumst. Integer ullamcorper lorem et odio viverra commodo. Do', 'Difícil', '2 ano');
 
 -- --------------------------------------------------------
 
@@ -188,10 +179,8 @@ CREATE TABLE `turmas` (
 --
 
 INSERT INTO `turmas` (`nome`) VALUES
-('1102A'),
-('IN114'),
-('MA420'),
-('Testee');
+('IN123'),
+('MA420');
 
 --
 -- Indexes for dumped tables
@@ -259,7 +248,7 @@ ALTER TABLE `turmas`
 -- AUTO_INCREMENT for table `provas`
 --
 ALTER TABLE `provas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- Constraints for dumped tables
 --
