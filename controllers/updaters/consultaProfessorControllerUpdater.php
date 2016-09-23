@@ -29,8 +29,8 @@
                   echo "<td>" . utf8_encode($professor[3]) . "</td>";
                   echo "<td>" . utf8_encode($professor[4]) . "</td>";
                   echo "<td>
-                          <i class='fa fa-pencil' aria-hidden='true'></i>
-                          <i class='fa fa-trash' aria-hidden='true'></i>
+                          <a href='editaProfessor.php?cpf=" . utf8_encode($professor[0]) . "'><i class='fa fa-pencil' aria-hidden='true'></i></a>
+                          <i class='fa fa-trash' aria-hidden='true' onclick='deletaCampo(\"" . utf8_encode($professor[0]) . "\", \"deletaProfessorController\");'></i>
                         </td>";
                   echo "</tr>";
                 }

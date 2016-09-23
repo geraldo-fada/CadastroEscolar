@@ -76,25 +76,32 @@ function consultarCampo(nome_updater) {
     xmlreq.send("pesquisa=" + pesquisa + "&campo=" + campo);
 }
 
-function editaCampo(controller, campo_wrapper) {
-    var search = $(this).parents("tr:first").find("td:first").val();
-    var wrapper = $(campo_wrapper);
-    var xmlreq = CriaRequest();
+function deletaCampo(pk, controller) {
+    var resposta = confirm("Você realmente deseja continuar?")
 
-    xmlreq.open("GET", "../controllers/"+ controller +".php?search=" + search, true);
+    if (resposta === true) {
+        var wrapper = $("#resultado_query");
+        var xmlreq = CriaRequest();
 
-    xmlreq.onreadystatechange = function() {
-        if (xmlreq.readyState == 4) {
-            if (xmlreq.status == 200) {
-                wrapper.html(xmlreq.responseText);
+        xmlreq.open("POST", "../controllers/"+ controller +".php", true);
+
+        xmlreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+        xmlreq.onreadystatechange = function() {
+            if (xmlreq.readyState == 4) {
+                if (xmlreq.status == 200) {
+                    wrapper.html(xmlreq.responseText);
+                }
+                else {
+                    wrapper.html("Erro: " + xmlreq.statusText);
+                }
             }
-            else {
-                wrapper.html("Erro: " + xmlreq.statusText);
-            }
-        }
-    };
+        };
 
-    xmlreq.send(null);
+        xmlreq.send("pk=" + pk);
+    }
+
+
 }
 
 // Professores
@@ -113,6 +120,39 @@ function cadProfessor() {
     var xmlreq = CriaRequest();
 
     xmlreq.open("POST", "../controllers/cadastroProfessorController.php", true);
+
+    xmlreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    xmlreq.onreadystatechange = function() {
+        if (xmlreq.readyState == 4) {
+            if (xmlreq.status == 200) {
+                wrapper.html(xmlreq.responseText);
+            }
+            else {
+                wrapper.html("Erro: " + xmlreq.statusText);
+            }
+        }
+    };
+
+    $("#query_validate_check").css({"display": "none"});
+    xmlreq.send("nome=" + nome + "&idade=" + idade + "&cpf=" + cpf + "&turma=" + turma + "&disciplina=" + disciplina);
+}
+
+function editaProfessor() {
+    var form = document.getElementById('editarProfessor');
+
+    var nome = $("input[name='nome']").val();
+    var idade = $("input[name='idade']").val();
+    var cpf = $("input[name='cpf']").val();
+    var turma = $("select[name='turma']").val();
+    var disciplina = $("select[name='disciplina']").val();
+
+    form.reset();
+
+    var wrapper = $("#resultado_query");
+    var xmlreq = CriaRequest();
+
+    xmlreq.open("POST", "../controllers/editarProfessorController.php", true);
 
     xmlreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
