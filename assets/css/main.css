@@ -1,228 +1,245 @@
 body {
-  font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* NAVBAR */
 nav {
-  position: fixed;
-  top: 0;
-  bottom: 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
 
-  width: 280px;
-  background-color: #37474f;
-  color: #dedede;
+    width: 280px;
+    background-color: #37474f;
+    color: #dedede;
 }
 
 nav i {
-  margin-right: 10px;
+    margin-right: 10px;
 }
 
 nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 nav a {
-  display: block;
-  text-decoration: none;
-  color: #dedede;
-  padding: 15px 15px 15px 30px;
+    display: block;
+    text-decoration: none;
+    color: #dedede;
+    padding: 15px 15px 15px 30px;
 
-  outline:none
+    outline:none
 }
 
 nav a:hover {
-  background-color: #546e7a;
+    background-color: #546e7a;
 }
 
 nav li {
-  padding: 0;
+    padding: 0;
 }
 
 nav .nav-dropdown {
-  display: none;
+    display: none;
 }
 
 nav .nav-dropdown a {
-  padding-left: 60px;
+    padding-left: 60px;
 }
 
 nav .nav-dropdown a:hover {
-  background-color: #263238;
+    background-color: #263238;
 }
 
 .nav-active {
-  background-color: #263238;
+    background-color: #263238;
 }
 
 #nav-logo i {
-  position: absolute;
-  top: 0;
-  left: 15px;
-  margin: 0;
-  font-size: 40px;
-  color: #d32f2f;
+    position: absolute;
+    top: 0;
+    left: 15px;
+    margin: 0;
+    font-size: 40px;
+    color: #d32f2f;
 }
 
 #nav-logo h1{
-  font-weight: 300;
-  font-size: 25px;
-  margin: 0;
-  margin: 10px 0 20px 65px;
+    font-weight: 300;
+    font-size: 25px;
+    margin: 10px 0 20px 65px;
 }
 
 /* FORM SECTION */
 input[type=text], input[type=submit], select, textarea {
-  background-color: #fff;
-  border: 1px solid #cfd8dc;
-  border-radius: 5px;
-  padding: 15px;
-  margin: 10px 0;
-  transition: all ease-in-out 0.2s;
-  outline:none;
-  -moz-appearance: none;
-  -webkit-appearance:none;
+    background-color: #fff;
+    border: 1px solid #cfd8dc;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px 0;
+    transition: all ease-in-out 0.2s;
+    outline:none;
+    -moz-appearance: none;
+    -webkit-appearance:none;
 }
 
 input[type=text]:focus, input[type=submit]:focus, select:focus, input[type=submit]:hover, textarea:focus {
-  border: 1px solid #263238;
-  box-shadow: 0px 0px 5px 0px rgba(38, 50, 56, 0.2);
+    border: 1px solid #263238;
+    box-shadow: 0px 0px 5px 0px rgba(38, 50, 56, 0.2);
 }
 
 textarea {
-  resize:vertical;
+    resize:vertical;
 }
 
 input[type=submit] {
-  margin: 50px 0 0 45px;
-  cursor: pointer;
+    margin: 50px 0 0 45px;
+    cursor: pointer;
 }
 
 form {
-  float: left;
-  max-width: 800px;
+    float: left;
+    max-width: 800px;
 }
 
 form div.form-input {
-  display: inline-block;
-  margin-right: 20px;
+    display: inline-block;
+    margin-right: 20px;
 }
 
 form div.form-input i {
-  width: 20px;
-  padding: 10px;
+    width: 20px;
+    padding: 10px;
 }
 
 form div.form-input textarea {
-  margin-left: 45px;
+    margin-left: 45px;
 }
 
 /* MAIN SECTION */
 main {
-  display: inline-block;
-  margin-left: 280px;
-  margin-bottom: 50px;
-  padding: 0 50px;
+    display: inline-block;
+    margin-left: 280px;
+    margin-bottom: 50px;
+    padding: 0 50px;
 }
 
 
 /* RESULTADO QUERY SECTION */
 #resultado_query .msg-sucesso {
-  margin: 50px 0 0 45px;
-  padding: 20px;
-  background-color: #a5d6a7;
-  max-width: 500px;
-  border-radius: 5px;
-  display: inline-block;
-  transition: all ease-in-out 0.2s;
+    margin: 50px 0 0 45px;
+    padding: 20px;
+    background-color: #a5d6a7;
+    max-width: 500px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: all ease-in-out 0.2s;
 }
 
 #resultado_query .msg-sucesso i {
-  cursor: pointer;
-  margin-left: 20px;
+    cursor: pointer;
+    margin-left: 20px;
 
-  transition: all ease-in-out 0.2s;
+    transition: all ease-in-out 0.2s;
 }
 
 #resultado_query .msg-sucesso i:hover {
-  color: #fff;
+    color: #fff;
 }
 
 #resultado_query .msg-erro {
-  margin: 50px 0 0 45px;
-  padding: 20px;
-  background-color: #e53935;
-  max-width: 500px;
-  border-radius: 5px;
-  display: inline-block;
-  transition: all ease-in-out 0.2s;
+    margin: 50px 0 0 45px;
+    padding: 20px;
+    background-color: #e53935;
+    max-width: 500px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: all ease-in-out 0.2s;
 }
 
 #resultado_query .msg-erro i {
-  cursor: pointer;
-  margin-left: 20px;
+    cursor: pointer;
+    margin-left: 20px;
 
-  transition: all ease-in-out 0.2s;
+    transition: all ease-in-out 0.2s;
 }
 
 #resultado_query .msg-erro i:hover {
-  color: #fff;
+    color: #fff;
 }
 
 #query_validate_check, #query_validate_check p, #query_validate_check i {
-  display: inline-block;
-  margin: 0;
+    display: inline-block;
+    margin: 0;
 }
 
 #query_validate_check i {
-  padding: 10px 0 10px 10px;
+    padding: 10px 0 10px 10px;
 }
 
 #query_validate_check p.msg-sucesso, #query_validate_check i.msg-sucesso {
-  color: #a5d6a7;
+    color: #a5d6a7;
 }
 
 #query_validate_check p.msg-erro, #query_validate_check i.msg-erro {
-  color: #e53935;
+    color: #e53935;
 }
 
 #questoes_adicionadas {
-  float: right;
-  margin-left: 10px;
-  padding: 20px;
-  display: none;
-  border: 1px solid #cfd8dc;
-  border-radius: 5px;
+    float: right;
+    margin-left: 10px;
+    padding: 20px;
+    display: none;
+    border: 1px solid #cfd8dc;
+    border-radius: 5px;
 }
 
 #questoes_adicionadas h4 {
-  margin: 0;
+    margin: 0;
 }
 
 #questoes_adicionadas ul {
-  padding-left: 20px;
-  margin-bottom: 0;
+    padding-left: 20px;
+    margin-bottom: 0;
 }
 
 #questoes_adicionadas li {
-  padding-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 /* TABELA */
 table, th, td {
-   border-collapse: collapse;
-   margin: 45px 45px 0 45px;
-   border: 1px solid #cfd8dc;
-   padding: 15px;
-   text-align: left;
+    border-collapse: collapse;
+    margin: 45px 45px 0 45px;
+    border: 1px solid #cfd8dc;
+    padding: 15px;
+    text-align: left;
 }
 
 table .table-check {
-  cursor: pointer;
-  transition: all ease-in-out 0.2s;
+    cursor: pointer;
+    transition: all ease-in-out 0.2s;
 }
 
 table .table-check:hover {
-  color: #a5d6a7;
+    color: #a5d6a7;
+}
+
+table a i {
+    color: black;
+}
+
+#query_validate_check table i {
+    padding: 5px;
+    cursor: pointer;
+    transition: all ease-in-out 0.2s;
+}
+
+#query_validate_check table i.fa-trash:hover {
+    color: #e53935;
+}
+
+#query_validate_check table i.fa-pencil:hover {
+    color: #a5d6a7;
 }
