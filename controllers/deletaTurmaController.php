@@ -1,0 +1,22 @@
+<?php
+   require_once 'dbController.php';
+
+   if (isset($_POST['pk'])) {
+      $nome = utf8_decode($_POST['pk']);
+
+      try {
+         $con->query("DELETE FROM turmas WHERE nome='" . $nome . "'");
+
+         echo "<div class='msg-sucesso'>
+                   Turma removida com sucesso!
+                   <i class='fa fa-times' aria-hidden='true' onclick=\"this.parentElement.style.display='none';\"></i>
+                 </div>";
+      }
+      catch (PDOException $e) {
+         echo "Error: " . $e;
+      }
+
+   }
+   else {
+      echo "<p>Por favor, complete todos os campos!</p>";
+   }

@@ -22,7 +22,7 @@
                   echo "<tr>";
                   echo "<td>" . utf8_encode($disciplina[0]) . "</td>";
                   echo "<td>
-                          <i class='fa fa-trash' aria-hidden='true'></i>
+                          <i class='fa fa-trash' aria-hidden='true' onclick='deletaCampo(\"" . utf8_encode($disciplina[0]) . "\", \"deletaDisciplinaController\")'></i>
                         </td>";
                   echo "</tr>";
                 }

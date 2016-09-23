@@ -22,7 +22,7 @@
                   echo "<tr>";
                   echo "<td>" . utf8_encode($turma[0]) . "</td>";
                   echo "<td>
-                          <i class='fa fa-trash' aria-hidden='true'></i>
+                          <i class='fa fa-trash' aria-hidden='true' onclick='deletaCampo(\"" . utf8_encode($turma[0]) . "\", \"deletaTurmaController\")'></i>
                         </td>";
                   echo "</tr>";
                 }
