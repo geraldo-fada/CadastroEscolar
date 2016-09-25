@@ -55,7 +55,7 @@
          <br>
 
          <!-- CADASTRO -->
-         <input type="submit" name="cadastrar" value="Cadastrar">
+         <input type="submit" name="cadastrar" value="Editar">
 
       </form>
 
