@@ -72,7 +72,7 @@ nav .nav-dropdown a:hover {
 }
 
 /* FORM SECTION */
-input[type=text], input[type=submit], select, textarea {
+input[type=text], input[type=submit], input[type=button], select, textarea {
     background-color: #fff;
     border: 1px solid #cfd8dc;
     border-radius: 5px;
@@ -84,7 +84,13 @@ input[type=text], input[type=submit], select, textarea {
     -webkit-appearance:none;
 }
 
-input[type=text]:focus, input[type=submit]:focus, select:focus, input[type=submit]:hover, textarea:focus {
+input[type=text]:focus,
+input[type=submit]:focus,
+input[type=button]:focus,
+select:focus,
+input[type=submit]:hover,
+input[type=button]:hover,
+textarea:focus {
     border: 1px solid #263238;
     box-shadow: 0px 0px 5px 0px rgba(38, 50, 56, 0.2);
 }
@@ -93,14 +99,18 @@ textarea {
     resize:vertical;
 }
 
-input[type=submit] {
+input[type=submit], input[type=button] {
     margin: 50px 0 0 45px;
     cursor: pointer;
 }
 
+input[type=button] {
+    margin-top: 0;
+}
+
 form {
     float: left;
-    max-width: 800px;
+    max-width: 1000px;
 }
 
 form div.form-input {
@@ -188,7 +198,7 @@ main {
 
 #questoes_adicionadas {
     float: right;
-    margin-left: 10px;
+    margin-left: 150px;
     padding: 20px;
     display: none;
     border: 1px solid #cfd8dc;
