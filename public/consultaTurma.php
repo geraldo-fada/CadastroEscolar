@@ -8,13 +8,14 @@
       <div class="form-input">
          <i class="fa fa-search" aria-hidden="true"></i>
          <!-- INPUT -->
-         <input type="text" name="pesquisa" maxlength="6" placeholder="Pesquisar por..." size="50"
-                onblur="consultarCampo('Turma');">
+         <input type="text" name="pesquisa" maxlength="6" placeholder="Pesquisar por..." size="50" />
 
          <select name="campo">
             <option value="nome">Nome</option>
             <option value="tudo">Tudo</option>
          </select>
+
+         <input type="button" value="Pesquisar" onclick="consultarCampo('Turma');">
       </div>
       <div id="query_validate_check"></div>
       <div id="resultado_query"></div>

@@ -18,8 +18,7 @@
         <!-- PROCURAR QUESTAO -->
         <div class="form-input">
           <i class="fa fa-search" aria-hidden="true"></i>
-          <input type="text" name="nome_questao" maxlength="50" placeholder="Pesquisar questao"
-          onblur="getQuestaoProva();">
+          <input type="text" name="nome_questao" maxlength="50" placeholder="Pesquisar por..." />
         </div>
 
         <!-- DISCIPLINA -->
@@ -43,13 +42,15 @@
             <option>2 ano</option>
             <option>3 ano</option>
           </select>
+
+          <input type="button" value="Pesquisar Questão" onclick="getQuestaoProva();" />
         </div>
         <div id="query_table"></div>
 
         <br>
 
         <!-- CADASTRO -->
-        <input type="submit" name="cadastrar" value="Cadastrar">
+        <input type="submit" name="cadastrar" value="Cadastrar Prova">
 
       </form>
 
