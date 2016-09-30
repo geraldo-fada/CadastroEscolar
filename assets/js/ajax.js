@@ -34,8 +34,8 @@ function validaCampo(tipo_do_campo ,campo_a_validar ,campo_wrapper, arquivo_php)
         xmlreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
         xmlreq.onreadystatechange = function() {
-            if (xmlreq.readyState == 4) {
-                if (xmlreq.status == 200) {
+            if (xmlreq.readyState === 4) {
+                if (xmlreq.status === 200) {
                     wrapper.html(xmlreq.responseText);
                 }
                 else {
@@ -62,8 +62,8 @@ function consultarCampo(nome_updater) {
     xmlreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
     xmlreq.onreadystatechange = function() {
-        if (xmlreq.readyState == 4) {
-            if (xmlreq.status == 200) {
+        if (xmlreq.readyState === 4) {
+            if (xmlreq.status === 200) {
                 wrapper.html(xmlreq.responseText);
             }
             else {
@@ -88,8 +88,8 @@ function deletaCampo(pk, controller) {
         xmlreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
         xmlreq.onreadystatechange = function() {
-            if (xmlreq.readyState == 4) {
-                if (xmlreq.status == 200) {
+            if (xmlreq.readyState === 4) {
+                if (xmlreq.status === 200) {
                     wrapper.html(xmlreq.responseText);
                 }
                 else {
@@ -124,8 +124,8 @@ function cadProfessor() {
     xmlreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
     xmlreq.onreadystatechange = function() {
-        if (xmlreq.readyState == 4) {
-            if (xmlreq.status == 200) {
+        if (xmlreq.readyState === 4) {
+            if (xmlreq.status === 200) {
                 wrapper.html(xmlreq.responseText);
             }
             else {
@@ -157,8 +157,8 @@ function editaProfessor() {
     xmlreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
     xmlreq.onreadystatechange = function() {
-        if (xmlreq.readyState == 4) {
-            if (xmlreq.status == 200) {
+        if (xmlreq.readyState === 4) {
+            if (xmlreq.status === 200) {
                 wrapper.html(xmlreq.responseText);
             }
             else {
@@ -191,8 +191,8 @@ function cadQuestao() {
     xmlreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
     xmlreq.onreadystatechange = function() {
-        if (xmlreq.readyState == 4) {
-            if (xmlreq.status == 200) {
+        if (xmlreq.readyState === 4) {
+            if (xmlreq.status === 200) {
                 wrapper.html(xmlreq.responseText);
             }
             else {
@@ -227,8 +227,8 @@ function cadProva() {
     xmlreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
     xmlreq.onreadystatechange = function() {
-        if (xmlreq.readyState == 4) {
-            if (xmlreq.status == 200) {
+        if (xmlreq.readyState === 4) {
+            if (xmlreq.status === 200) {
                 wrapper.html(xmlreq.responseText);
             }
             else {
@@ -260,8 +260,8 @@ function getQuestaoProva() {
         xmlreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
         xmlreq.onreadystatechange = function() {
-            if (xmlreq.readyState == 4) {
-                if (xmlreq.status == 200) {
+            if (xmlreq.readyState === 4) {
+                if (xmlreq.status === 200) {
                     wrapper.html(xmlreq.responseText);
                 }
                 else {
@@ -291,8 +291,8 @@ function cadTurma() {
     xmlreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
     xmlreq.onreadystatechange = function() {
-        if (xmlreq.readyState == 4) {
-            if (xmlreq.status == 200) {
+        if (xmlreq.readyState === 4) {
+            if (xmlreq.status === 200) {
                 wrapper.html(xmlreq.responseText);
             }
             else {
@@ -322,8 +322,8 @@ function cadDisciplina() {
     xmlreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
     xmlreq.onreadystatechange = function() {
-        if (xmlreq.readyState == 4) {
-            if (xmlreq.status == 200) {
+        if (xmlreq.readyState === 4) {
+            if (xmlreq.status === 200) {
                 wrapper.html(xmlreq.responseText);
             }
             else {
