@@ -3,7 +3,7 @@
 
   if(isset($_POST["nome"]) && isset($_POST["corpo"]) && isset($_POST["disciplina"]) && isset($_POST["dificuldade"]) && isset($_POST["ano"])) {
     $nome = utf8_decode($_POST["nome"]);
-    $corpo = utf8_decode($_POST["corpo"]);
+    $corp = utf8_decode($_POST["corpo"]);
     $disciplina = utf8_decode($_POST["disciplina"]);
     $dificuldade = utf8_decode($_POST["dificuldade"]);
     $ano = utf8_decode($_POST["ano"]);
