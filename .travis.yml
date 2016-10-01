@@ -4,4 +4,6 @@ php:
   - hhvm
   - nightly
 
-script: composer install
+before_script: composer install
+
+script: find . -type f -name "*.php" -exec php -l {} \; | grep -v 'No syntax errors'
