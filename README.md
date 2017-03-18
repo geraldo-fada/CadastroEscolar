@@ -5,5 +5,6 @@ Trabalho escolar da turma IN313
 [![Code Climate](https://codeclimate.com/github/geraldo-fada/CadastroEscolar/badges/gpa.svg)](https://codeclimate.com/github/geraldo-fada/CadastroEscolar)
 
 </br>
-*Por Geraldo Fada*</br>
-*Sobre os termos de licença GPLv3*
+_Por Geraldo Fada_
+</br>
+_Sobre os termos de licença GPLv3_
