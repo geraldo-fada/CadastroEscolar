@@ -1,4 +1,4 @@
-# Cadastro Escolar
+# Portal dos Professores
 Trabalho escolar da turma IN313
 
 [![Build Status](https://travis-ci.org/geraldo-fada/CadastroEscolar.svg?branch=master)](https://travis-ci.org/geraldo-fada/CadastroEscolar)
